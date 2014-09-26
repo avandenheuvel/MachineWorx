@@ -31,7 +31,42 @@ body {
 
 #nav {
 	width: 250px;
-		
+	position:absolute;
+	height: 60%;
+}
+
+#adminContainer{
+	position: absolute;
+	color: #333333;
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+} 
+
+#adminOptions, a{
+	display: block;
+	width: 20%;
+	border:outset;
+	color: #333333;
+	text-align: center;
+}
+
+#adminOptions, a:hover{
+	border:inset;
+}
+
+#adminOptions, a:visited{
+	color: #333333;
+}
+
+#adminOptions, a:active{
+	color: #333333;
+}
+
+#adminDataArea{
+	float:left;
+	display:block;
+	width: 30%;
 }
 
 #spacer {
@@ -53,7 +88,7 @@ body {
 }
 
 a:link {
-	color: #CCC;
+	color:#333333;
 	text-decoration: none;
 }
 
@@ -63,8 +98,8 @@ a:visited {
 }
 
 a:hover {
-	color: #CCC;
-	text-decoration: none;
+	color: #333333;
+	text-decoration:underline;
 }
 
 a:active {

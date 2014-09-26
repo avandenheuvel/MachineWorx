@@ -1,4 +1,5 @@
 
+
 <script>//Create the nav bar to select which Admin form to discplay
 
 	var Options = ["Create Customer", "Edit Customer",
@@ -9,13 +10,13 @@
 		
 		for(var i = 0; i<Options.length; i++ ){
 			var link = document.createElement('a');
-			link.className = "button tiny";
+			link.className = "adminOptions";
 			link.textContent = Options[i];
 			link.href = '#';
-			link.style.width="100%";
+			link.style.width="";
 			link.style.margin="1px";
 			link.onclick = function(){setUpAdmin(this)};
-			document.getElementById('adminSelect').appendChild(link);
+			document.getElementById('adminContainer').appendChild(link);
 		}
 		
 		/**
@@ -25,9 +26,9 @@
 		 * Uses ajax via jQuery
 		 */
 		function setUpAdmin(In){
-			// Used to display test parameter in //alert(In.textContent);
+			//alert(In.textContent);
 			$(function(){
-			    $("#include").load("viewAdministrator/itemCreate.php");
+			    $("#include").load("adminItemCreate.php");
 			});
 		}
 </script>
