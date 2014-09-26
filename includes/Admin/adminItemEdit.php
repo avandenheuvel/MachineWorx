@@ -1,6 +1,5 @@
-<html>
-	<h2>Update Check Point</h2>
-	
+<h2>Edit Item</h2>
+
 	<form>
 		Select Check<select>
 			<script>//Define options for building list of available checks to edit
