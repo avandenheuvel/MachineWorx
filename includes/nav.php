@@ -6,5 +6,6 @@
 </head>
 
 <body>
+	<a href="adminContainer.php">Administer</a>
 </body>
 </html>
