@@ -1,5 +1,6 @@
 
-<script>
+<script>//Create the nav bar to select which Admin form to discplay
+
 	var Options = ["Create Customer", "Edit Customer",
 		"Create Machine", "Edit Machine", 
 		"Create Model", "Edit Model",
