@@ -39,6 +39,7 @@ body {
 	position: absolute;
 	color: #333333;
 	width: 80%;
+	height:90%;
 	margin-left: 10%;
 	margin-right: 10%;
 } 
@@ -48,29 +49,39 @@ body {
 	width: 20%;
 }
 
-#adminOptions, a{
+.adminOptions{
+	color: #333333;
+}
+
+a.adminOptions{
 	display: block;
 	width: 100%;
-	border:outset;
-	color: #333333;
+	border:1px solid;
+	padding:5px;
+	border-color:#808080;
 	text-align: center;
 }
 
-#adminOptions, a:hover{
-	border:inset;
+a.adminOptions:hover{
+	background-color:#808080;
+	text-decoration: none;
 }
 
-#adminOptions, a:visited{
+a.adminOptions:visited{
 	color: #333333;
 }
 
-#adminOptions, a:active{
+a.adminOptions:active{
 	color: #333333;
 }
 
 #adminDataArea{
 	width: 75%;
+	height: 60%;
+	overflow:scroll;
 	float:right;
+	background: white;
+	border: inset;
 }
 
 #spacer {
@@ -97,7 +108,6 @@ a:link {
 }
 
 a:visited {
-	color: #CCC;
 	text-decoration: none;
 }
 

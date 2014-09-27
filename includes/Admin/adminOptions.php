@@ -14,7 +14,7 @@
 			link.textContent = Options[i];
 			link.href = '#';
 			link.style.width="";
-			link.style.margin="1px";
+			link.style.margin="";
 			link.onclick = function(){setUpAdmin(this)};
 			document.getElementById('adminOptCont').appendChild(link);
 		}
