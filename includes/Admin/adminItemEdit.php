@@ -1,7 +1,7 @@
 <h2>Edit Item</h2>
 
 	<form>
-		Select Check<select>
+		Select Check: <select id="available">
 			<script>//Define options for building list of available checks to edit
 				
 				//Simple array for now. Will require a PHP db query
@@ -16,17 +16,18 @@
 					//link.style.width="100%";
 					//link.style.margin="1px";
 					//link.onclick = function(){setUpAdmin(this)};
-					document.getElementById('adminSelect').appendChild(link);
+					document.getElementById('available').appendChild(link);
 				}
 			</script>
 		</select>
 		
 	</br>
 		<!--Area for user to select which item to edit-->
-		<label for="checkDescription" id="checkHeading">Check Description:</label>
-		<textarea rows="15" cols="50" id="checkDescription"
+		<label for="checkDescription" id="checkHeading">Check Description:</label></br>
+		<textarea rows="5" cols="50" id="checkDescription" style="overflow:scroll"
 		    style="resize: none;"></textarea>	
-	    
+		    
+	   </br>
 	    <!--Select the type of item-->
 	    <input type="radio" name="checkType" value="binCheck" />Binary Check</br>
 	    <input type="radio" name="checkType" value="dataCheck" />Data Check</br>

@@ -78,6 +78,7 @@ a.adminOptions:active{
 #adminDataArea{
 	width: 75%;
 	height: 60%;
+	min-height:200px;
 	overflow:scroll;
 	float:right;
 	background: white;
