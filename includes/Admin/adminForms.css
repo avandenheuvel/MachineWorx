@@ -1,3 +1,40 @@
 select{
 	width:200px;
 }
+
+#select1{
+	float: left;
+}
+
+#select2{
+	float:right;
+}
+
+#editContainer{
+	width: 90%;
+	margin-left: 5%;
+}
+
+#column1{
+	width: 40%;
+	float:left;
+}
+
+#column2outer{
+	width:60%;
+	float: right;
+}
+
+#column2outer #column2mid { 
+	width: 30%; 
+	float: left; 
+} 
+
+#column2outer #column2right { 
+	width: 70%; 
+	float: right; 
+}
+
+.button{
+	width:100%;
+}
