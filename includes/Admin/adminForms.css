@@ -1,5 +1,10 @@
 select{
-	width:200px;
+	width:100%;
+}
+
+#link{
+	text-decoration: underline;
+	color:#000080;
 }
 
 #select1{
@@ -13,6 +18,7 @@ select{
 #editContainer{
 	width: 90%;
 	margin-left: 5%;
+	min-width: 400px;
 }
 
 #column1{
@@ -36,5 +42,7 @@ select{
 }
 
 .button{
-	width:100%;
+	width:80%;
+	margin-right: 10%;
+	margin-left: 10%;
 }
