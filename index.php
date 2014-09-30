@@ -6,6 +6,7 @@
 		<link href="./includes/Admin/adminForms.css" type="text/css" rel="stylesheet" />
 		
 		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="scripts.js" type=text/javascript language=JavaScript></script>
 		<script src="modernizr-1.5.js"></script>
 	</head>
 	

@@ -26,7 +26,17 @@
 		 * Uses ajax via jQuery
 		 */
 		function setUpAdmin(In){
-			var dataArea = In.textContent;
+			
+			var dataArea
+			
+			if(typeof In == "string"){
+				dataArea=In; 
+			}else{
+				dataArea=In.textContent;
+			}
+			
+			alert("In = " + dataArea);
+			
 			switch(dataArea){
 				case "Create Customer":
 					$(function(){

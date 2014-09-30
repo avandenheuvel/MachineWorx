@@ -3,7 +3,8 @@
 <div id="editContainer">
 	<p>Set up sub assembly by picking items from the available items section and moving them
 		to the selected items area. If the check you require is not available it can be made on the
-		<a href="#" id="link"onclick="setUpOptions('Create Item')">Create Items</a> page.</p>
+		<a href id="link"onclick='setUpAdmin("Create Item"); return false;'>Create Items</a> page.</p>
+		<input type=button onclick="setUpAdmin('Create Item')" value="CreateItem" /><!--Calls function in adminOptions.php-->
 	<div id="column1">
 	<h3>Available items</h3>	
 	<select multiple size=12 id="select1">
