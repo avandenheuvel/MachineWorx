@@ -33,6 +33,7 @@ select{
 
 #column2outer #column2mid { 
 	width: 30%; 
+	height:100%;
 	float: left; 
 } 
 

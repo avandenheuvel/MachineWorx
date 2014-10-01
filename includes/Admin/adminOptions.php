@@ -29,13 +29,12 @@
 			
 			var dataArea
 			
+			//Input can come as an object from the option bar, or txt link from another form.
 			if(typeof In == "string"){
 				dataArea=In; 
 			}else{
 				dataArea=In.textContent;
 			}
-			
-			alert("In = " + dataArea);
 			
 			switch(dataArea){
 				case "Create Customer":
