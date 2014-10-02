@@ -39,7 +39,7 @@
 			switch(dataArea){
 				case "Create Customer":
 					$(function(){
-						    $("#include").load("includes/Admin/adminCustomerCreate.php");
+						    $("#include").load("adminCustomerCreate.php");
 						});
 					
 					break;
@@ -77,7 +77,7 @@
 						
 				case "Create SubAssembly":
 					$(function(){
-						    $("#include").load("includes/Admin/adminSubAssyCreate.php");
+						    $("#include").load("adminSubAssyCreate.php");
 						});
 					break;
 					

@@ -12,7 +12,9 @@
 	
 	<body>
 		<?php include_once("./includes/header.php");?>
-		<?php include_once("./includes/Admin/adminContainer.php");?>
+		<div style="position: relative; top: 20%;">
+			<a href="./Admin">Admin Options</a>
+		</div>
         <?php include_once("./includes/nav.php");?>
         <?php include_once("./includes/footer.php");?>
 	</body>
