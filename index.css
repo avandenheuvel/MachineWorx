@@ -35,58 +35,11 @@ body {
 	height: 60%;
 }
 
-#adminContainer{
-	position: absolute;
-	color: #333333;
-	width: 80%;
-	height:90%;
-	margin-left: 10%;
-	margin-right: 10%;
-} 
 
-#adminOptCont{
-	float: left;
-	width: 20%;
-}
-
-.adminOptions{
-	color: #333333;
-}
-
-a.adminOptions{
-	display: block;
-	width: 100%;
-	border:1px solid;
-	padding:5px;
-	border-color:#808080;
-	text-align: center;
-}
-
-a.adminOptions:hover{
-	background-color:#808080;
-	text-decoration: none;
-}
-
-a.adminOptions:visited{
-	color: #333333;
-}
-
-a.adminOptions:active{
-	color: #333333;
-}
-
-#adminDataArea{
-	width: 75%;
-	height: 80%;
-	min-height:200px;
-	overflow:scroll;
-	float:right;
-	background: white;
-	border: inset;
-}
 
 #spacer {
 	height: 40px;
+	width:100%
 }
 
 #footer {

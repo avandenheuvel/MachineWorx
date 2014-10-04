@@ -3,7 +3,7 @@
 	<head>
 		<title>machineWorx</title>
 		<link type="text/css" rel="stylesheet" href="../index.css"/>
-		<link type="text/css" rel="stylesheet" href="./adminForms.css"/>
+		<link type="text/css" rel="stylesheet" href="../Admin/adminForms.css"/>
 				<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 		<!--<script src="scripts.js" type=text/javascript language=JavaScript></script>-->
 
@@ -16,11 +16,11 @@
 	
 	<H1>Administrative options</H1>
 	<div id="adminOptCont">
-		<?php include('adminOptions.php')?>
+		<?php include('techOptions.php')?>
 	</div>
 	
 	<div id="adminDataArea">
-		<?php include('adminDataArea.php')?>
+		<?php include('techDataArea.php')?>
 	</div>
 	
 </div>

@@ -1,7 +1,8 @@
-<h2>Edit Item</h2>
 
-	<form>
-		Select Check: <select id="available">
+<form>
+	<div id="editContainer">
+		<h2>Edit Item</h2>
+		<h4>Select Check</h4><select class="dropdown" id="available">
 			<script>//Define options for building list of available checks to edit
 				
 				//Simple array for now. Will require a PHP db query
@@ -22,18 +23,24 @@
 		</select>
 		
 	</br>
+	
 		<!--Area for user to select which item to edit-->
-		<label for="checkDescription" id="checkHeading">Check Description:</label></br>
-		<textarea rows="5" cols="50" id="checkDescription" style="overflow:scroll"
-		    style="resize: none;"></textarea>	
+		<label for="txtInput"><h4>Check Description: </h4></label>
+		<textarea rows="5" cols="50" class="txtInput"></textarea>	
 		    
 	   </br>
 	    <!--Select the type of item-->
-	    <input type="radio" name="checkType" value="binCheck" />Binary Check</br>
-	    <input type="radio" name="checkType" value="dataCheck" />Data Check</br>
+	    <fieldset class="radGrpChkType">
+	    	<legend>Type of Check</legend>
+	    		<input type=radio name="checkType" id="data" value="Data Check" /><label for="data">Data Check</label></li>
+	    		<input type=radio name="checkType" id="item" value="Item Check" /><label for="item">Item Check</label></li>
+	    </fieldset>
 	    
-	    <input type=submit name="submitItemEdit" value="Submit" />
-	    <input type=reset	 name="cancelItemEdit" value="Cancel"/>
-		
-	</form>
-</html>
+	    
+	</div><!--End editContainer-->	
+	
+	<div class="formButton">
+		    <input type=submit id="btnSubmit" name="submitItemEdit" value="Submit" />
+		    <input type=reset	 id="btnReset" name="cancelItemEdit" value="Cancel"/>
+	    </div>
+</form>

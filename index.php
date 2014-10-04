@@ -13,7 +13,8 @@
 	<body>
 		<?php include_once("./includes/header.php");?>
 		<div style="position: relative; top: 20%;">
-			<a href="./Admin">Admin Options</a>
+			<a href="./Admin">Admin Options</a></br>
+			<a href="./Tech">Technician - Enter Data</a>
 		</div>
         <?php include_once("./includes/nav.php");?>
         <?php include_once("./includes/footer.php");?>

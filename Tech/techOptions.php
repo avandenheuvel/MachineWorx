@@ -1,4 +1,7 @@
-
+<script>
+	var Customer=["Quad-Charlotte", "Donnelley-Mattoon","Rexam-Fairfield",
+	"Ball-Monticello"];
+</script>
 
 <script>//Create the nav bar to select which Admin form to discplay
 
