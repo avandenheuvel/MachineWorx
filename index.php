@@ -4,6 +4,7 @@
 		<title>machineWorx</title>
 		<link href="./index.css" type="text/css" rel="stylesheet"/>
 		<link href="./includes/Admin/adminForms.css" type="text/css" rel="stylesheet" />
+		<link href="./Tech/treeview/_styles.css" type="text/css" rel="stylesheet"/>
 		
 		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 		<script src="scripts.js" type=text/javascript language=JavaScript></script>

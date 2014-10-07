@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+
 <html>
 	<head>
 		<title>machineWorx</title>
 		<link type="text/css" rel="stylesheet" href="../index.css"/>
 		<link type="text/css" rel="stylesheet" href="../Admin/adminForms.css"/>
-				<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<link type="text/css" rel="stylesheet" href="treeview/_styles.css" />
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 		<!--<script src="scripts.js" type=text/javascript language=JavaScript></script>-->
 
 	</head>
@@ -16,7 +18,7 @@
 	
 	<H1>Administrative options</H1>
 	<div id="adminOptCont">
-		<?php include('techOptions.php')?>
+		<?php include('treeview/treeview.php')?>
 	</div>
 	
 	<div id="adminDataArea">
