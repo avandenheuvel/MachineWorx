@@ -16,11 +16,11 @@
 	
 	<H1>Administrative options</H1>
 	<div id="adminOptCont">
-		<?php include('adminOptions.php')?>
+		<?php include('adminOptions.php');?>
 	</div>
 	
 	<div id="adminDataArea">
-		<?php include('adminDataArea.php')?>
+		<?php include('adminDataArea.php');?>
 	</div>
 	
 </div>
