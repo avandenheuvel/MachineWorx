@@ -31,15 +31,11 @@ body {
 
 #nav {
 	width: 250px;
-	position:absolute;
-	height: 60%;
+		
 }
-
-
 
 #spacer {
 	height: 40px;
-	width:100%
 }
 
 #footer {
@@ -57,17 +53,18 @@ body {
 }
 
 a:link {
-	color:#333333;
+	color: #CCC;
 	text-decoration: none;
 }
 
 a:visited {
+	color: #CCC;
 	text-decoration: none;
 }
 
 a:hover {
-	color: #333333;
-	text-decoration:underline;
+	color: #CCC;
+	text-decoration: none;
 }
 
 a:active {
