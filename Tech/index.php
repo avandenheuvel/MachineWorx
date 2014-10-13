@@ -1,9 +1,11 @@
+<?php define('_ROOT', "../");?>
 <!DOCTYPE html>
 
 
 <html>
 	<head>
 		<title>machineWorx</title>
+        <link rel="icon" type="image/png" href="../favicon.png"/>
 		<link type="text/css" rel="stylesheet" href="../index.css"/>
 		<link type="text/css" rel="stylesheet" href="../Admin/adminForms.css"/>
 		<link type="text/css" rel="stylesheet" href="_styles.css" />
