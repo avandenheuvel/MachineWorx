@@ -1,7 +1,3 @@
-
-
-
-
 <div id="tableHeader">
 	Header here...
 </div>
