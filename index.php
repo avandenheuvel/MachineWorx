@@ -10,7 +10,7 @@
 	
 	<body>
 		<?php include_once("./includes/header.php");?>
-		<div style="position: relative; top: 20%;">
+		<div id="test" style="position: relative; top: 20%;">
 			<a href="./Admin">Admin Options</a></br>
 			<a href="./Tech">Technician - Enter Data</a><br/>
 		</div>

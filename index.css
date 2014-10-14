@@ -39,6 +39,35 @@ body {
 	border-bottom: 2px solid #4DC3FF;
 }
 
+#headText {
+	width: 300px;
+	font-size: 14px;
+	height: 30px;
+	text-align: right;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	color: #DDD;	
+}
+
+#logOutBtn {
+	position: absolute;
+	width: 60px;
+	height: 20px;
+	bottom: 10px;
+	right: 10px;
+	border-radius: 4px;
+	background-color: #4DC3FF;
+	color: #444;
+	font-size: 14px;
+	cursor: pointer;
+	padding: 3px;
+}
+
+#logOutBtn:hover {
+	background-color: #DDD;	
+}
+
 #logBtn {
 	position: absolute;
 	width: 120px;

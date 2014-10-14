@@ -10,7 +10,7 @@ function logBtnClick(){
 	}
 }
 
-function validateAndSend(url){
+function validateAndSend(){
 	var valid=true;
 	if(document.getElementById('password').value==""){
 		document.getElementById('password').style.borderColor='#F00';
@@ -25,15 +25,15 @@ function validateAndSend(url){
 		valid=false;
 	}
 	if(valid){
-		sendRequest(url);
+		sendRequest();
 	}
 	return false;
 }
 
-function sendRequest(url){
+function sendRequest(){
 	var params="username="+document.getElementById('username').value+"&password="+document.getElementById('password').value;
 	var xmlObj=new XMLHttpRequest();
-	xmlObj.open("POST", url, true);
+	xmlObj.open("POST", base+"includes/login.php", true);
 	xmlObj.setRequestHeader('Content-type','application/x-www-form-urlencoded');
 	xmlObj.setRequestHeader("Content-length", params.length);
 	xmlObj.setRequestHeader("Connection", "close");
@@ -51,13 +51,17 @@ function getRequest(code){
 			document.getElementById('logError').innerHTML="Invalid username or password.";	
 			break;
 		case("1"):
-			window.location.replace("");
+			window.location.replace(base+"Admin");
 			break;
 		case("2"):
-			window.location.replace("");
+			window.location.replace(base+"Tech");
 			break;
 		case("3"):
-			window.location.replace("");
+			document.getElementById('logError').innerHTML="Customer";
+			//window.location.replace("");
+			break;
+		default:
+			document.getElementById('logError').innerHTML="Unable to login.";	
 			break;
 	}
 }
