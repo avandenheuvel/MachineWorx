@@ -1,7 +1,9 @@
+<?php define('_ROOT', "../");?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>machineWorx</title>
+        <link rel="icon" type="image/png" href="../favicon.png"/>
 		<link type="text/css" rel="stylesheet" href="../index.css"/>
 		<link type="text/css" rel="stylesheet" href="./adminForms.css"/>
 				<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
