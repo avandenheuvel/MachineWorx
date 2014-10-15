@@ -36,13 +36,43 @@ body {
 	background-color: #444;
 	text-align: center;
 	padding: 18px;
+	border-bottom: 2px solid #4DC3FF;
+}
+
+#headText {
+	width: 300px;
+	font-size: 14px;
+	height: 30px;
+	text-align: right;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	color: #DDD;	
+}
+
+#logOutBtn {
+	position: absolute;
+	width: 60px;
+	height: 20px;
+	bottom: 10px;
+	right: 10px;
+	border-radius: 4px;
+	background-color: #4DC3FF;
+	color: #444;
+	font-size: 14px;
+	cursor: pointer;
+	padding: 3px;
+}
+
+#logOutBtn:hover {
+	background-color: #DDD;	
 }
 
 #logBtn {
 	position: absolute;
 	width: 120px;
 	height: 40px;
-	top: 25px;
+	top: 20px;
 	right: 10px;	
 	font-size: 24px;
 	color: #444;
@@ -50,10 +80,74 @@ body {
 	font-weight: bold;
 	padding: 8px;
 	border-radius: 5px;
+	cursor: pointer;
 }
 
 #logBtn:hover {
 	background-color: #DDD;	
+}
+
+#logBox {
+	display: none;
+	background-color: #444;
+	position: absolute;
+	top: 60px;
+	right: 10px;
+	width: 300px;
+	height: 120px;
+	color: #DDD;
+	font-size: 14px;
+	border: solid 2px #4DC3FF;
+	z-index: 1000;
+}
+
+#logBox #username,#password {
+	position: absolute; 
+	width: 160px; 
+	height: 22px; 
+	right: 30px;
+	font-size: 14px;
+	padding-left: 3px;
+}
+
+#logBox #logError {
+	position: absolute;
+	left: 10px;
+	top: 8px;
+	width: 280px;
+	height: 20px;
+	font-size: 16px;
+	text-align: center;	
+}
+
+#logBox #username {
+	top: 35px;
+}
+
+#logBox #password {
+	top: 62px;	
+}
+
+#logBox #submit {
+	position: absolute;
+	bottom: 8px;
+	width: 50px;
+	height: 20px;
+	right: 30px;
+}
+
+#logBox #uLabel, #pLabel {
+	position: absolute; 
+	right: 195px; 
+	font-size: 16px;
+}
+
+#logBox #uLabel{
+	top: 37px;
+}
+
+#logBox #pLabel {
+	top: 64px;
 }
 
 #headImg {
@@ -116,7 +210,7 @@ body {
 	left: 0px;
 	height: 20px;
 	background-color: #333;
-	border-top: solid 1px #CCC;
+	border-top: solid 2px #4DC3FF;
 	color: #CCC;	
 	font-size: 16px;
 	padding: 2px;
@@ -148,7 +242,7 @@ a:active {
 /* Form Styles */
 
 input {
-	border: 1px solid #4DC3FF;
+	border: 2px solid #4DC3FF;
 	background-color: #444;
 	color: #DDD;
 }
@@ -164,6 +258,7 @@ input[type=submit]{
 	border-radius: 4px;
 	color: #444;
 	font-weight: bold;
+	cursor: pointer;
 }
 
 input[type=submit]:hover{
