@@ -1,4 +1,3 @@
-
 .link{
 	text-decoration: underline;
 	color:#000080;
@@ -6,12 +5,12 @@
 
 #adminContainer{
 	position: relative;
-	color: #333333;
-	width: 80%;
+	color: #DDD;
+	width: 90%;
 	min-height:150px;
 	min-width:600px;
-	margin-left: 10%;
-	margin-right: 10%;
+	margin-left: 5%;
+	margin-right: 5%;
 } 
 
 #adminOptCont{
@@ -21,22 +20,26 @@
 
 
 .adminOptions{
-	color: #333333;
+	color: #DDD;
 }
 
 a.adminOptions{
 	display: block;
 	width: 100%;
-	border:1px solid;
-	padding:5px;
-	margin: 5px;
+	height: 28px;
+	font-size: 18px;
+	padding:1px;
+	margin-bottom: 5px;
 	min-width:110px;
-	border-color:#808080;
 	text-align: center;
+	background-color: #DDD;
+	border-radius: 5px;
+	border: 2px solid #4DC3FF;
 }
 
 a.adminOptions:hover{
-	background-color:#808080;
+	background-color: #4DC3FF;
+	color: #444;
 	text-decoration: none;
 	
 }
@@ -44,14 +47,17 @@ a.adminOptions:hover{
 #adminDataArea{
 	position: relative;
 	display:inline-block;
-	background-color:white;
+	background-color: #DDD;
+	color: #444;
 	width: 78%;
 	margin-left:2%;
-	margin-bottom:20px;
 	min-height:350px;
 	min-width: 400px;
-	border: inset;
-	overflow: auto;
+	border: solid 2px #4DC3FF;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: 10px;
+	border-radius: 5px;
 }
 
 #editContainer{
@@ -98,10 +104,6 @@ a.adminOptions:hover{
 	margin-left: 10%;
 }
 
-#editContainer h4{
-	margin-bottom: 2px;
-}
-
 #editContainer .radio{
 	display: inline;
 }
@@ -127,7 +129,7 @@ a.adminOptions:hover{
 	margin-top: 10px;
 }
 
-.formButton #btnSubmit:hover{
+/*.formButton #btnSubmit:hover{
 	background-color: #008000;
 	color: #ffffff;
 }
@@ -135,7 +137,7 @@ a.adminOptions:hover{
 .formButton #btnReset:hover{
 	background-color: #ff0000;
 	color: #ffffff;
-}
+}*/
 
 .dropdown{
 	display:inline-block;
@@ -148,10 +150,6 @@ a.adminOptions:hover{
 	width: 100%;
 	overflow: auto;
 	resize:auto;
-}
-
-.txtInput:hover{
-	box-shadow: 0 10px 6px -6px #777;
 }
 
 .radio{
@@ -178,6 +176,3 @@ a.adminOptions:hover{
 select:hover {
 	box-shadow: 0 10px 6px -6px #777;
 }
-
-
-

@@ -25,15 +25,15 @@
 	</br>
 	
 		<!--Area for user to select which item to edit-->
-		<label for="txtInput"><h4>Check Description: </h4></label>
+		<label for="txtInput">Check Description: </label>
 		<textarea rows="5" cols="50" class="txtInput"></textarea>	
 		    
 	   </br>
 	    <!--Select the type of item-->
-	    <fieldset class="radGrpChkType">
+	    <fieldset>
 	    	<legend>Type of Check</legend>
-	    		<input type=radio name="checkType" id="data" value="Data Check" /><label for="data">Data Check</label></li>
-	    		<input type=radio name="checkType" id="item" value="Item Check" /><label for="item">Item Check</label></li>
+	    		<input type=radio name="checkType" id="data" value="Data Check" /><label for="data">Data Check</label>
+	    		<input type=radio name="checkType" id="item" value="Item Check" /><label for="item">Item Check</label>
 	    </fieldset>
 	    
 	    

@@ -12,7 +12,6 @@
 	
 	<body>
 		<?php include_once("./includes/header.php");?>
-		<div id="main">
 			<div id="top">
             	<h1>Marketing</h1>
                 
@@ -39,7 +38,6 @@
                 Information about machine checks, calibration procedures, recommended repairs, tools needed, etc.
             </div>
             </a>
-		</div>
         <?php include_once("./includes/footer.php");?>
 	</body>
 </html>
