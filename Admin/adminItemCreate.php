@@ -1,7 +1,11 @@
 
 <form>
 	<div id="editContainer">
-		<h2>Create Item:</h2>
+		<h2><a class="helpLink">Create Item:</a></h2>
+		<div class="helpWindow">
+			<h2>Create items help</h2>
+			<p>Blah blah instructions instructions...</p>
+		</div>
 		<!--Area for user to select which item to edit-->
 		
 		<label for="txtInput"><h4><strong> Check name: </strong>Short description <40 characters</h4></label>
