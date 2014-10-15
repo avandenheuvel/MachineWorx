@@ -15,8 +15,6 @@
 	</head>
 	<body>
 		<?php include("../includes/header.php");?>
-		<div id="spacer"></div>
-		<div id="spacer"></div>
 		<div id="adminContainer">
 	
 	<H1>Technician Data Entry</H1>

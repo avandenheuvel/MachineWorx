@@ -1,5 +1,14 @@
 <div id="tableHeader">
-	Header here...
+	<div class="description">
+		Description
+	</div>
+	<div class="condition">
+		Condition
+	</div>
+	<div class="comments">
+		Comment
+	</div>
+	<div class="picture"></div><!--Placeholder for spacing only-->
 </div>
 
 <div class="subAssyCont">
