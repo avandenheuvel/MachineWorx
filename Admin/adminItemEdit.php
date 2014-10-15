@@ -1,7 +1,11 @@
 
 <form>
 	<div id="editContainer">
-		<h2>Edit Item</h2>
+		<h2>Edit Item check</h2>
+		<p>Edit the items checks by picking items from the dropdown menu and updating it's description.
+			If the item check you require is not available it can be made on the
+			<a href class="link"onclick='setUpAdmin("Create Item"); return false;'>Create Items</a> page.</p><!--Calls function in adminOptions.php-->
+
 		<h4>Select Check</h4><select class="dropdown" id="available">
 			<script>//Define options for building list of available checks to edit
 				
