@@ -1,6 +1,7 @@
 <?php session_start();?>
+<div id="wrapper">
 <div id="header">
-	<img id="headImg" src="<?php echo _ROOT . "images/gear.png"?>" width="70" height="70"/>
+	<img id="headImg" src="<?php echo _ROOT . "images/headImg.png"?>" width="70" height="70"/>
 	<a href="<?php echo _ROOT . "./";?>">machineWorx</a>
 <?php
 		if(isset($_SESSION['username'])){
@@ -26,7 +27,7 @@
 			echo (
 			"<script type=\"text/javascript\">var base=\""._ROOT."\";</script>
 			<script type=\"text/javascript\" src=\""._ROOT."includes/login.js\"></script>
-			<div id=\"logBtn\" onclick=\"logBtnClick();\">Login</div>
+			<div id=\"logBtn\" onclick=\"logBtnClick();\">Login<img id=\"logArrow\" src=\""._ROOT."images/arrow_down.png\" width=\"16\" height=\"16\"/></div>
 			<div id=\"logBox\">
 			<div id=\"logError\">Login Below:</div>
 			<form method=\"post\" onSubmit=\"return validateAndSend();\">
@@ -41,3 +42,4 @@
 		}
 ?>
 </div>
+<div id="main">

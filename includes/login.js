@@ -1,11 +1,17 @@
 var displaying=false;
+var arrowDown=new Image();
+arrowDown.src=base+"images/arrow_down.png";
+var arrowUp=new Image();
+arrowUp.src=base+"images/arrow_up.png";
 
 function logBtnClick(){
 	if(displaying){
 		document.getElementById('logBox').style.display='none';
+		document.getElementById('logArrow').src=arrowDown.src;
 		displaying=false;	
 	}else{
 		document.getElementById('logBox').style.display='block';
+		document.getElementById('logArrow').src=arrowUp.src;
 		displaying=true;
 	}
 }

@@ -15,6 +15,7 @@
 	</head>
 	<body>
 		<?php include("../includes/header.php");?>
+<<<<<<< HEAD
 			<div id="adminContainer">
 				
 				<H1>Technician Data Entry</H1>
@@ -28,6 +29,23 @@
 				
 			</div>
 		<?php include("../includes/footer.php");?>
+=======
+		<!--<div id="spacer"></div>
+		<div id="spacer"></div>-->
+		<div id="adminContainer">
+	
+	<H1>Technician Data Entry</H1>
+	<div id="adminOptCont">
+		<?php include('treeview.php');?>
+	</div>
+	
+	<div id="adminDataArea">
+		<?php include('techDataArea.php');?>
+	</div>
+	
+</div>
+<?php include("../includes/footer.php");?>
+>>>>>>> machineWorx/master
 	</body>
 </html>
 

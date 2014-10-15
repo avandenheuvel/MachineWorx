@@ -21,14 +21,43 @@ html, body {
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	background-color: #DDD;
-	color: #444;
+	color: #DDD;
+}
+
+h1 {
+	padding: 0;
+	margin: 0;	
+	margin-bottom: 10px;
+	font-size: 36px;
+}
+
+h2 {
+	padding: 0;
+	margin: 0;
+	margin-bottom: 10px;
+	font-size: 24px;	
+}
+
+h4 {
+	padding: 0;
+	margin:0 ;
+	margin-bottom: 10px;
+	font-size: 16px;	
+}
+
+#wrapper {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	height: auto;
+	padding-bottom: 30px;
 }
 
 /* Header styles */
 
 #header {
 	width: 100%;
-	position: absolute;
+	position: relative;
 	height: 80px;
 	font-size: 44px;
 	top: 0px;
@@ -48,6 +77,10 @@ body {
 	right: 10px;
 	top: 10px;
 	color: #DDD;	
+}
+
+#logArrow {
+	margin-left: 5px;	
 }
 
 #logOutBtn {
@@ -101,6 +134,11 @@ body {
 	z-index: 1000;
 }
 
+#logBox input[type=submit]:hover {
+	background-color: #DDD;
+	color: #444;	
+}
+
 #logBox #username,#password {
 	position: absolute; 
 	width: 160px; 
@@ -140,6 +178,8 @@ body {
 	position: absolute; 
 	right: 195px; 
 	font-size: 16px;
+	font-weight:normal;
+	margin: 0px;
 }
 
 #logBox #uLabel{
@@ -201,6 +241,20 @@ body {
 	width:100%
 }
 
+/* Body Styles*/
+
+#main {
+	position: relative;
+	width: 90%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	left: 5%;
+	background-color: #444;
+	border: 2px solid #4DC3FF; 
+	color: #DDD;
+	padding: 20px;
+}
+
 /* Footer Styles */
 
 #footer {
@@ -208,12 +262,12 @@ body {
 	position: fixed;
 	bottom: 0px;
 	left: 0px;
-	height: 20px;
-	background-color: #333;
+	height: 30px;
+	background-color: #444;
 	border-top: solid 2px #4DC3FF;
-	color: #CCC;	
+	color: #DDD;	
 	font-size: 16px;
-	padding: 2px;
+	padding: 7px;
 	text-align: center;
 }
 
@@ -241,18 +295,59 @@ a:active {
 
 /* Form Styles */
 
-input {
-	border: 2px solid #4DC3FF;
-	background-color: #444;
-	color: #DDD;
+legend, label {
+	display: block;
+	padding: 0;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	font-size: 16px;
+	font-weight: bold;
 }
 
-input:focus {
+legend {
+	padding: 0;
+	position: absolute;
+	left: -2px;
+	top: -25px;
+	margin: 0;	
+}
+
+input[type=radio]+label, input[type=checkbox]+label{
+	display: inline;
+	font-size: 14px;
+}
+
+input[type=radio]{
+		
+}
+
+fieldset {
+	position: relative;
+	border-radius: 5px;
+	border: 2px solid #444;
+	margin-top: 30px;
+}
+
+fieldset:hover, fieldset:focus {
+	border-color: #4DC3FF;
+}
+
+input[type=text], input[type=password], textarea {
+	border: 2px solid #444;
 	background-color: #DDD;
 	color: #444;
 }
 
-input[type=submit]{
+textarea {
+	padding: 5px;	
+	border-radius: 5px;
+}
+
+input[type=text]:focus, input[type=password]:focus, textarea:focus, input[type=text]:hover, input[type=password]:hover, textarea:hover {
+	border-color: #4DC3FF;
+}
+
+input[type=submit],input[type=reset]{
 	background-color: #4DC3FF;
 	border: none;
 	border-radius: 4px;
@@ -261,9 +356,9 @@ input[type=submit]{
 	cursor: pointer;
 }
 
-input[type=submit]:hover{
-	background-color: #DDD;
-	color: #444;
+input[type=submit]:hover,input[type=reset]:hover{
+	background-color: #444;
+	color: #DDD;
 }
 
 /* Mobile Device Sheet */
