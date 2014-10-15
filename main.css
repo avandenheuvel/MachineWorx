@@ -1,2 +1,81 @@
-/* CSS Document */
+#main {
+	position: relative;
+	width: 90%;
+	height: 660px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	left: 5%;
+	background-color: #444;
+	border: 2px solid #4DC3FF; 
+	color: #444;
+}
 
+h1 {
+	padding: 0;
+	margin: 0;	
+	margin-bottom: 10px;
+	font-size: 36px;
+}
+
+#top {
+	position: absolute;
+	width: 94%;
+	height: 300px;
+	left: 3%;
+	top: 20px;
+	border: 2px solid #4DC3FF;
+	background-color: #DDD;
+	padding: 10px;
+	padding-right: 260px;
+	font-size: 18px;
+}
+
+#topSlide, #bottomSlide {
+	width: 240px;
+	height: 240px;
+	position: absolute;
+	right: 0px;
+	top: 20px;
+	margin: 10px;
+}
+
+#bottomSlide {
+	opacity: 0;	
+}
+
+#left, #mid, #right {
+	position: absolute;
+	border: 2px solid #4DC3FF;
+	top: 340px;
+	background-color: #DDD;
+	width: 29%;
+	height: 300px;
+	background-position: center;
+	background-size: 90%;
+	background-repeat: no-repeat;
+	padding: 10px;
+	cursor: pointer;
+	font-size: 18px;
+}
+
+#left:hover, #mid:hover, #right:hover {
+	background-color: #4DC3FF;	
+	color: #444;
+}
+
+#left {
+	left: 3%;
+	background-image: url("./images/checklist.png");
+}
+
+#mid {
+	width: 30%;
+	left: 50%;
+	margin-left: -15%;
+	background-image: url("./images/reports.png");
+}
+
+#right{
+	right: 3%;
+	background-image: url("./images/Wikipedia-logo.png");
+}
