@@ -27,7 +27,7 @@
 			echo (
 			"<script type=\"text/javascript\">var base=\""._ROOT."\";</script>
 			<script type=\"text/javascript\" src=\""._ROOT."includes/login.js\"></script>
-			<div id=\"logBtn\" onclick=\"logBtnClick();\">Login</div>
+			<div id=\"logBtn\" onclick=\"logBtnClick();\">Login<img id=\"logArrow\" src=\""._ROOT."images/arrow_down.png\" width=\"16\" height=\"16\"/></div>
 			<div id=\"logBox\">
 			<div id=\"logError\">Login Below:</div>
 			<form method=\"post\" onSubmit=\"return validateAndSend();\">
