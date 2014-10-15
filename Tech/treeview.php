@@ -45,7 +45,7 @@ function createTree($array, $currentParent, $currLevel = 0, $prevLevel = -1) {
 	    	echo '<li> <label for="subfolder2">'.$category['name'].'</label> 
 	    	<input type="checkbox" id="subfolder2"/>';
 			
-			if($category['name']=='task4'){
+			if($category['name']=='SubAssy1'){
 				//Installed for testing of 'file' class	
 				echo"<ol>
 							<li class='file'><a href='' onclick='setUpTech()'>Subfile 1</a></li>
