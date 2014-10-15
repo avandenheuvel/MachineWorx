@@ -2,20 +2,21 @@
 	#tableHeader {
 		width: 100%;
 		position: absolute;
+		display:table;
 		top: 0px;
 		left: 0px;
-		height: 20px;
+		height: 30px;
 		background-color: #333;
 		border-top: solid 1px #CCC;
 		color: #CCC;	
-		font-size: 14px;
-		padding: 2px;
-		text-align: center;
+		font-size: 18px;
+		padding-left:2%;
+		text-align: left;
 	}
 	.subAssyCont{
 		position:absolute;
 		overflow:auto;
-		margin-top:20px;
+		margin-top:30px;
 		width:100%;
 		height: 90%;
 	}
