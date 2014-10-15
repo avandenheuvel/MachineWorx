@@ -49,6 +49,8 @@
 			to the selected items area. If the machine you require is not available it can be made on the
 			<a href class="link"onclick='setUpAdmin("Create Machine"); return false;'>Create Machine</a> page.</p><!--Calls function in adminOptions.php-->
 			
+			<label for="txtInput"><h4><strong> Customer name: </h4></label>
+			<textarea rows="1" cols="50" maxlength="40" class="txtInput"></textarea>
 			<div id="column1">
 			<h3>Available Machines</h3>	
 				<select multiple size=12 id="select1" class="selectLarge">

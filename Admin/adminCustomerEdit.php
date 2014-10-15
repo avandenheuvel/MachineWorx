@@ -48,7 +48,26 @@
 		<p>Edit the equpment available at the facility by picking items from the available machines section on the left and moving them
 			to the selected machines area. If the machine you require is not available it can be made on the
 			<a href class="link"onclick='setUpAdmin("Create Machine"); return false;'>Create Machines</a> page.</p><!--Calls function in adminOptions.php-->
-
+		
+		<h4>Select Customer</h4><select class="dropdown" id="available">
+			<script>//Define options for building list of available checks to edit
+				
+				//Simple array for now. Will require a PHP db query
+				var Options = ["Customer 1", "Customer 2", "Customer 3",
+				"Customer 4", "Customer 5", "Customer 6", "Customer...."];
+				
+				for(var i = 0; i<Options.length; i++ ){
+					var link = document.createElement('option');
+					link.className = "";
+					link.textContent = Options[i];
+					link.href = '#';
+					//link.style.width="100%";
+					//link.style.margin="1px";
+					//link.onclick = function(){setUpAdmin(this)};
+					document.getElementById('available').appendChild(link);
+				}
+			</script>
+		
 		<h4>Select Check</h4><select class="dropdown" id="available">
 			<script>//Define options for building list of available checks to edit
 				
