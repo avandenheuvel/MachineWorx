@@ -167,12 +167,6 @@ a.adminOptions:hover{
 
 .selectLarge {
 	width:100%;
-	color: #000;
-	background-color: #FFF;
 	height:100%;
 	min-height: 100px;
-}
-
-select:hover {
-	box-shadow: 0 10px 6px -6px #777;
 }
