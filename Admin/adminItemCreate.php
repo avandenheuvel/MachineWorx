@@ -1,5 +1,5 @@
 
-<form>
+<form action="adminItemCreateRESPONSE.php">
 	<div id="editContainer">
 		<?php include("helpFiles/helpPopUp.php")?><!--Triggers pop up window with instruction-->
 		
@@ -16,15 +16,15 @@
 	    <!--Select the type of item-->
 	    <fieldset>
 	    	<legend>Type of Check</legend>
-	    		<input type=radio name="checkType" id="data" value="Data Check" /><label for="data">Data Check</label>
-	    		<input type=radio name="checkType" id="item" value="Item Check" /><label for="item">Item Check</label>
+	    		<input type=radio name="checkType" id="checkType" value="Data Check" /><label for="data">Data Check</label>
+	    		<input type=radio name="checkType" id="checkType" value="Item Check" /><label for="item">Item Check</label>
 	    </fieldset>
 	    
 	    
 	</div><!--End editContainer-->	
 	
 	<div class="formButton">
-		    <input type=submit id="btnSubmit" name="submitItemEdit" method="get" value="Submit" />
+		    <input type=submit id="btnSubmit" name="submitItemEdit" action="adminItemCreateRESPONSE.php" method="get" value="Submit" />
 		    <input type=reset	 id="btnReset" name="cancelItemEdit" value="Cancel"/>
 	    </div>
 </form>

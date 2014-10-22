@@ -1,8 +1,8 @@
 <?php
 	
-	require_once('../DemoPasswordVerify/PasswordVerify.php');
+	//require_once('../DemoPasswordVerify/PasswordVerify.php');
 	
-	$CustomerID = $_SESSION['LoggedInCustID'];
+	/*$CustomerID = $_SESSION['LoggedInCustID'];*/
 	
 	//Get verified variables from the user form
 	
@@ -13,72 +13,24 @@
 	$zipPattern="/^\d{5}(-\d{4})?$/";
 	$eMailPattern="/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/";
 	
-	$firstName=$_GET['txtFirstName'];
-	if(!preg_match($namePattern, $firstName)){
-		header('Location:adminItemCreate.php');
-		 
+	$simpleDesc=$_GET['checkDescSimple'];
+	/*if(!preg_match($blankPattern, $simpleDesc)){//updated error check to verify length
+		header('Location:index.php');
 		echo'<script type="text/javascript">alert("1");</script>'; 
-		
 		exit();
-	}
+	}*/
 	
-	$lastName=$_GET['txtLastName'];
-	if(!preg_match($namePattern, $lastName)){
-		header('Location:adminItemCreate.php');
+	$detailedDesc=$_GET['checkDescDetail'];
+	/*if(!preg_match($blankPattern, $detailedDesc)){
+		header('Location:index.php');
 		echo'<script type="text/javascript">alert("2");</script>'; 
 		exit();
-	}
+	}*/
 	
-	$eMail=$_GET['txtEmail'];
-	if(!preg_match($eMailPattern,$eMail)){
-		header('Location:adminItemCreate.php');
-		echo'<script type="text/javascript">alert("3");</script>'; 
-		exit();
-	}
+	$checkType=$_GET['checkType'];
+	echo'<script type="text/javascritp"alert(<?=$checkType?>);</script>';
 	
-	$phone=$_GET['txtPhone'];
-	if(!preg_match($phonePattern,$phone)){
-		header('Location:adminItemCreate.php');
-		echo'<script type="text/javascript">alert("4");</script>'; 
-		exit();
-	}
 	
-	$address=$_GET['txtAddress'];
-	if(!preg_match($blankPattern, $address)){
-		header('Location:adminItemCreate.php');
-		echo'<script type="text/javascript">alert("5");</script>'; 
-		exit();
-	}
-	
-	$city=$_GET['txtCity'];
-	if(!preg_match($namePattern, $city)){
-		header('Location:adminItemCreate.php');
-		echo'<script type="text/javascript">alert("6");</script>'; 
-		exit();
-	}
-	
-	include('StateArray.php');
-	$state=$_GET['lstState'];
-	if (!in_array($state, $stateCodes)){
-		header('Location:adminItemCreate.php');
-		echo'<script type="text/javascript">alert("7");</script>'; 
-		exit();
-	}
-	
-	$zip=$_GET['txtZip'];
-	if(!preg_match($zipPattern, $zip)){
-		header('Location:adminItemCreate.php');
-		echo'<script type="text/javascript">alert("8");</script>'; 
-		exit();
-	}
-	
-	$password=$_GET['txtPassword'];
-	$passwordVer=$_GET['txtPwdVerify'];
-	if(strlen($password)<3 || strlen($passwordVer)<3 || $password!=$passwordVer){
-		header('Location:adminItemCreate.php');
-		echo'<script type="text/javascript">alert("9");</script>';
-		exit();
-	}
 
 ?>
 
@@ -89,10 +41,10 @@
 		<h2>You have submitted the following info:</h2>
 		
 		<?php
-		
-		$dsn = 'mysql:host=itsql.fvtc.edu;dbname=90737_120250836';
-		$username = '90737_120250836';
-		$ServerPassword='90737_120250836';
+		/*
+		$dsn = 'mysql:host=itsql.fvtc.edu;dbname=machineworx158';
+		$username = 'MachineWorx158';
+		$ServerPassword='MachineWorx158';
 		
 		$options=array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
 		
@@ -127,23 +79,14 @@
 				$error_message = $e->getMessage();		
 				echo("<p>Database error: $error_message</p>");
 			}
-		
+		*/
 		?>
 		
 		<!--Many times PHP data is output to html with the echo command-->
 		<!--This is another way to enter PHP variable tags-->
-		<h3>Your Customer number is: <?=$CustomerID?></h3>
-		<h3>First name: <?=$firstName?> </h3>
-		<h3>Last name: <?=$lastName?> </h3>
-		<h3>E-Mail: <?=$eMail?> </h3>
-		<h3>Phone: <?=$phone?> </h3>
-		<h3>Address: <?=$address?> </h3>
-		<h3>City: <?=$city?> </h3>
-		<h3>State: <?=$state?> </h3>
-		<h3>Zip: <?=$zip?> </h3>
-		<h3>Password: <?=$password?> </h3>
-		<h3>Verified Password: <?=$passwordVer?> </h3>
-		
+		<h3>Check name: <?=$simpleDesc?></h3>
+		<h3>Check Description: <?=$detailedDesc?> </h3>
+		<h3>Check Type: <?=$$checkType?> </h3>
 		
 		<?php
 		
@@ -151,7 +94,7 @@
 			
 		?>
 		
-		<a href=../index.htm>Return Home</a>
+		<a href=index.php>Return Home</a>
 		
 	</body>
 </html>
