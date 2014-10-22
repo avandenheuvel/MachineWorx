@@ -63,7 +63,7 @@ function getRequest(code){
 			window.location.replace(base+"Tech");
 			break;
 		case("3"):
-			window.location.replace(base+"Cust");
+			window.location.replace(base+"Customer");
 			break;
 		default:
 			document.getElementById('logError').innerHTML="Unable to login.";	
