@@ -26,13 +26,13 @@
                 Manage your equipment assets. Print reports, view service history, and track data points.
             </div>
             </a>
-            <a href="">
+            <a href="./Forum">
             <div id="mid">
             	<h1>Forum</h1>
                 Post your questions to the Technician Forum.
             </div>
             </a>
-            <a href="">
+            <a href="./Wiki">
             <div id="right">
             	<h1>Wiki</h1>
                 Information about machine checks, calibration procedures, recommended repairs, tools needed, etc.
