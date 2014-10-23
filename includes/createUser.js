@@ -27,20 +27,31 @@ function changePhoto(){
 
 function validateCreation(){
 	var send=true;
-	document.getElementById('fname').value;
-	document.getElementById('lname').value;
-	document.getElementById('user').value;
-	if(document.getElementById('pass').value==""){
-		//send=false;
+	if(document.getElementById('fname').value==""){
+		document.getElementById('fname').style.borderColor="#F00";
+		send=false;
+	}
+	if(document.getElementById('lname').value==""){
+		document.getElementById('lname').style.borderColor="#F00";
+		send=false;
+	}
+	if(document.getElementById('user').value==""){
+		document.getElementById('user').style.borderColor="#F00";
+		send=false;
 	}
 	if(document.getElementById('pass').value==""){
-		//send=false;
+		document.getElementById('pass').style.borderColor="#F00";
+		send=false;
+	}
+	if(document.getElementById('passV').value==""){
+		document.getElementById('passV').style.borderColor="#F00";
+		send=false;
 	}
 	if(document.getElementById('pass').value!=document.getElementById('passV')){
-		//send=false;
+		document.getElementById('pass').style.borderColor="#F00";
+		document.getElementById('passV').style.borderColor="#F00";
+		send=false;
 	}
-	document.getElementById('pass').value;
-	document.getElementById('passV').value;
 	if(send){
 		createUser();
 	}
@@ -49,9 +60,9 @@ function validateCreation(){
 
 function createUser(){
 	var pass=CryptoJS.MD5(document.getElementById('pass').value);
-	/*var params="username="+document.getElementById('username').value+"&password="+document.getElementById('password').value;
+	var params="user="+document.getElementById('user').value+"&pass="+pass+"&fname="+document.getElementById('fname').value;
 	var xmlObj=new XMLHttpRequest();
-	xmlObj.open("POST", base+"includes/login.php", true);
+	xmlObj.open("POST", "../includes/createUser.php", true);
 	xmlObj.setRequestHeader('Content-type','application/x-www-form-urlencoded');
 	xmlObj.setRequestHeader("Content-length", params.length);
 	xmlObj.setRequestHeader("Connection", "close");
@@ -60,7 +71,7 @@ function createUser(){
 			getResponse(xmlObj.responseText);
 		}
 	}
-	xmlObj.send(params);*/
+	xmlObj.send(params);
 }
 
 function getResponse(response){

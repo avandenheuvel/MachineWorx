@@ -259,7 +259,7 @@ label[for="user"]{
 	position: absolute;
 	margin-left: 210px;
 	margin-top: 100px;
-}*/
+}
 
 label[for="pass"]{
 	position: absolute;
@@ -283,18 +283,22 @@ label[for="passV"]{
 	position: absolute;
 	margin-left: 360px;
 	margin-top: 150px;
-}
+}*/
 
 #submit {
 	position: absolute;
 	bottom: 10px;
 	right: 10px;
+	width: 70px;
+	padding: 10px;
 }
 
 #reset {
 	position: absolute;
 	bottom: 10px;
-	right: 60px;
+	width: 70px;
+	right: 90px;
+	padding: 10px;
 }
 
 #editUser {
@@ -307,4 +311,12 @@ label[for="passV"]{
 	bottom: 10px;
 	position: absolute;
 	overflow-y: auto;
+}
+
+#statusDiv {
+	margin-left: 210px;	
+}
+
+#createUser fieldset {
+	margin-top: 0;	
 }
