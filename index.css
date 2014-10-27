@@ -321,6 +321,13 @@ input[type=radio]{
 		
 }
 
+.txtLabel {
+	color: #444;
+	font-size: 16px;
+	display: inline;
+	font-weight:normal;	
+}
+
 fieldset {
 	position: relative;
 	border-radius: 5px;
@@ -359,6 +366,32 @@ input[type=submit],input[type=reset]{
 input[type=submit]:hover,input[type=reset]:hover{
 	background-color: #444;
 	color: #DDD;
+}
+
+.error {
+	border-color: #F00;	
+}
+
+input[type=button] {
+	background-color: #DDD;
+	border: 2px solid #444;
+	border-radius: 4px;
+	color: #444;	
+}
+
+input[type=button]:hover {
+	border-color: #4DC3FF;
+}
+
+select {
+	background-color: #DDD;
+	border: 2px solid #444;
+	border-radius: 4px;
+	color: #444;
+}
+
+select:focus, select:hover {
+	border-color: #4DC3FF;	
 }
 
 /* Mobile Device Sheet */
