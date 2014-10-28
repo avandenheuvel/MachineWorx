@@ -13,26 +13,38 @@
 	$zipPattern="/^\d{5}(-\d{4})?$/";
 	$eMailPattern="/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/";
 	
-	$simpleDesc=$_GET['checkDescSimple'];
-	/*if(!preg_match($blankPattern, $simpleDesc)){//updated error check to verify length
-		header('Location:index.php');
-		echo'<script type="text/javascript">alert("1");</script>'; 
-		exit();
-	}*/
+	if(isset($_GET['checkDescSimple'])){
+		$simpleDesc=$_GET['checkDescSimple'];
+		
+		if(!preg_match($blankPattern, $simpleDesc)){//updated error check to verify length
+			echo'<script>$(function() {
+				$("#include").load("userModify.php");	
+			});</script>';
+			exit();
+		}
+	}
 	
-	$detailedDesc=$_GET['checkDescDetail'];
-	/*if(!preg_match($blankPattern, $detailedDesc)){
-		header('Location:index.php');
-		echo'<script type="text/javascript">alert("2");</script>'; 
-		exit();
-	}*/
+	if(isset($_GET['checkDescDetail'])){
+		$detailedDesc=$_GET['checkDescDetail'];
+		
+		if(!preg_match($blankPattern, $detailedDesc)){//updated error check to verify length
+			header('Location:index.php');
+			echo'<script>alert("2");</script>'; 
+			exit();
+		}
+	}
 	
-	$checkType=$_GET['checkType'];
-	echo'<script type="text/javascritp"alert(<?=$checkType?>);</script>';
-	
-	
-
+	if(isset($_GET['checkType'])){
+		$checkType=$_GET['checkType'];
+		
+		if(!preg_match($blankPattern, $checkType)){//updated error check to verify length
+			header('Location:index.php');
+			echo'<script>alert("");</script>'; 
+			exit();
+		}
+	}
 ?>
+
 
 <html>
 	<head><title>Response page</title></head>
@@ -40,8 +52,8 @@
 		<h1>Your Account has been updated</h1>
 		<h2>You have submitted the following info:</h2>
 		
-		<?php
-		/*
+		<!--?php
+
 		$dsn = 'mysql:host=itsql.fvtc.edu;dbname=machineworx158';
 		$username = 'MachineWorx158';
 		$ServerPassword='MachineWorx158';
@@ -79,14 +91,13 @@
 				$error_message = $e->getMessage();		
 				echo("<p>Database error: $error_message</p>");
 			}
-		*/
-		?>
+		?-->
 		
 		<!--Many times PHP data is output to html with the echo command-->
 		<!--This is another way to enter PHP variable tags-->
 		<h3>Check name: <?=$simpleDesc?></h3>
 		<h3>Check Description: <?=$detailedDesc?> </h3>
-		<h3>Check Type: <?=$$checkType?> </h3>
+		<h3>Check Type: <?=$checkType?> </h3>
 		
 		<?php
 		
