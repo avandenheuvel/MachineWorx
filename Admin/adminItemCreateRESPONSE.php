@@ -13,8 +13,8 @@
 	$zipPattern="/^\d{5}(-\d{4})?$/";
 	$eMailPattern="/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/";
 	
-	if(isset($_GET['checkDescSimple'])){
-		$simpleDesc=$_GET['checkDescSimple'];
+	if(isset($_POST['checkDescSimple'])){
+		$simpleDesc=$_POST['checkDescSimple'];
 		
 		if(!preg_match($blankPattern, $simpleDesc)){//updated error check to verify length
 			echo'<script>$(function() {
@@ -24,8 +24,8 @@
 		}
 	}
 	
-	if(isset($_GET['checkDescDetail'])){
-		$detailedDesc=$_GET['checkDescDetail'];
+	if(isset($_POST['checkDescDetail'])){
+		$detailedDesc=$_POST['checkDescDetail'];
 		
 		if(!preg_match($blankPattern, $detailedDesc)){//updated error check to verify length
 			header('Location:index.php');
@@ -34,8 +34,8 @@
 		}
 	}
 	
-	if(isset($_GET['checkType'])){
-		$checkType=$_GET['checkType'];
+	if(isset($_POST['checkType'])){
+		$checkType=$_POST['checkType'];
 		
 		if(!preg_match($blankPattern, $checkType)){//updated error check to verify length
 			header('Location:index.php');
@@ -52,7 +52,7 @@
 		<h1>Your Account has been updated</h1>
 		<h2>You have submitted the following info:</h2>
 		
-		<!--?php
+		<?php
 
 		$dsn = 'mysql:host=itsql.fvtc.edu;dbname=machineworx158';
 		$username = 'MachineWorx158';
@@ -63,25 +63,16 @@
 		try{
 			$db = new PDO($dsn,$username,$ServerPassword,$options);	
 			
-			$update = "
-				UPDATE CustomerInfo
-				SET FirstName = :FirstName, LastName = :LastName, 
-					Address = :Address, City = :City, State = :State, Zip = :Zip, 
-					Phone = :Phone, EMail = :EMail, Password = :Password
-				WHERE CustomerID = :CustomerID";
+			$Insert= "Insert Into tblChecks
+			(Check_Name, Check_Desc, Check_Type) 
+			Value(:Check_Name, :Check_Desc, :Check_Type)";
 			
-			$SQL = $db->prepare($update);
+			$SQL = $db->prepare($Insert);
 			
-			$SQL->bindValue(':CustomerID', $CustomerID);
-			$SQL->bindValue(':FirstName', $firstName);
-			$SQL->bindValue(':LastName', $lastName);
-			$SQL->bindValue(':Address', $address);
-			$SQL->bindValue(':City', $city);
-			$SQL->bindValue(':State', $state);
-			$SQL->bindValue(':Zip', $zip);
-			$SQL->bindValue(':Phone', $phone);
-			$SQL->bindValue(':EMail', $eMail);
-			$SQL->bindValue(':Password', $password);
+			$SQL->bindValue(':Check_Name', $simpleDesc);
+			$SQL->bindValue(':Check_Desc', $detailedDesc);
+			$SQL->bindValue(':Check_Type', $checkType);
+			
 			
 			$SQL->execute();//execute the SQL query
 		
@@ -91,7 +82,7 @@
 				$error_message = $e->getMessage();		
 				echo("<p>Database error: $error_message</p>");
 			}
-		?-->
+		?>
 		
 		<!--Many times PHP data is output to html with the echo command-->
 		<!--This is another way to enter PHP variable tags-->

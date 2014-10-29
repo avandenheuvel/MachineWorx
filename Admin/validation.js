@@ -33,13 +33,20 @@ function testInput(str, inID) {
 			}
 		break;
 		
+		//Check that detailed description has between 10 and 140 characters
+		case (inID == "checkDescDetail") :
+			if(/^.{10,140}$/.test(str) == true){
+				result = "";
+			}else{
+				result = "Description must be between 10 and 140 characters";
+			}		        
+		break;
+		
 		//Check that simple description has between 10 and 40 characters
 		case (inID == "checkDescSimple") :
 			if(/^.{10,40}$/.test(str) == true){
-				alert("true");
 				result = "";
 			}else{
-				alert("false");
 				result = "Description must be between 10 and 40 characters";
 			}		        
 		break;
