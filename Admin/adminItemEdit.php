@@ -1,9 +1,10 @@
 <!--Initialize array-->
 <script>
-	var checkNamesArray=[];
+	var checkNamesArray=new Array();
+		alert("array init");
 </script>
 
-<!--?php********************************NOT WORKING*******************************
+<?php
 	
 	$dsn = 'mysql:host=itsql.fvtc.edu;dbname=machineworx158';
 	$username = 'MachineWorx158';
@@ -15,27 +16,26 @@
 		$db = new PDO($dsn,$username,$ServerPassword,$options);
 			
 		
-		$SQL = $db->prepare("Select * from tblChecks");
+		$SQL = $db->prepare("Select Check_Name from tblChecks");
 		$SQL->execute();//execute the SQL query
 		$Check = $SQL->fetch();//Gets the first row of the table
-		
 		
 		//loop through all tuples in relation	
 		while($Check != null){
 			
 			//Gets the current row value from the appropriate column
-			$CheckID = $Check['CheckID'];
+			//$CheckID = $Check['CheckID'];
 			$CheckName = $Check['Check_Name'];
-			$CheckDesc = $Check['Check_Desc'];
-			$CheckType=$Check['Check_Type'];
+			//$CheckDesc = $Check['Check_Desc'];
+			//$CheckType=$Check['Check_Type'];
 			
 			//Adds values to javascript array
-			echo'
-				<script>
-					checkNamesArray.push(<?=$CheckName?>)
-				</script>';
+			//echo("<script>");
+				echo("<p>$CheckName</p>");
+				//echo('checkNamesArray.push($CheckName);');
+			//echo("</script>");
 			
-			$Customer = $SQL->fetch();//fetch the next row
+			$Check = $SQL->fetch();//fetch the next row*/
 		}
 		
 		$SQL->closeCursor(); //disconnect from the server
@@ -45,7 +45,7 @@
 		$error_message = $e->getMessage();		
 		echo("<p>Database error: $error_message</p>");
 	}
-?-->
+?>
 
 <form>
 	<div id="editContainer">
@@ -58,14 +58,14 @@
 			<script>//Define options for building list of available checks to edit
 				
 				//Simple array for now. Will require a PHP db query
-				var Options = ["Check 1", "Check 2", "Check 3",
-				"Check 4", "Check 5", "Check 6", "Check...."];
+				/*var Options = ["Check 1", "Check 2", "Check 3",
+				"Check 4", "Check 5", "Check 6", "Check...."];*/
 				
 				
-				for(var i = 0; i<Options.length; i++ ){
+				for(var i = 0; i<checkNamesArray.length; i++ ){
 					var link = document.createElement('option');
 					link.className = "";
-					link.textContent = Options[i];
+					link.textContent = checkNamesArray[i];
 					link.href = '#';
 					//link.style.width="100%";
 					//link.style.margin="1px";
