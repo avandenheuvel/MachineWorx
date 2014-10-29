@@ -1,3 +1,51 @@
+<!--Initialize array-->
+<script>
+	var checkNamesArray=[];
+</script>
+
+<!--?php********************************NOT WORKING*******************************
+	
+	$dsn = 'mysql:host=itsql.fvtc.edu;dbname=machineworx158';
+	$username = 'MachineWorx158';
+	$ServerPassword='MachineWorx158';
+	
+	$options=array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
+	
+	try{
+		$db = new PDO($dsn,$username,$ServerPassword,$options);
+			
+		
+		$SQL = $db->prepare("Select * from tblChecks");
+		$SQL->execute();//execute the SQL query
+		$Check = $SQL->fetch();//Gets the first row of the table
+		
+		
+		//loop through all tuples in relation	
+		while($Check != null){
+			
+			//Gets the current row value from the appropriate column
+			$CheckID = $Check['CheckID'];
+			$CheckName = $Check['Check_Name'];
+			$CheckDesc = $Check['Check_Desc'];
+			$CheckType=$Check['Check_Type'];
+			
+			//Adds values to javascript array
+			echo'
+				<script>
+					checkNamesArray.push(<?=$CheckName?>)
+				</script>';
+			
+			$Customer = $SQL->fetch();//fetch the next row
+		}
+		
+		$SQL->closeCursor(); //disconnect from the server
+		$db = null; // Clear memory
+	
+	}catch(PDOException $e){
+		$error_message = $e->getMessage();		
+		echo("<p>Database error: $error_message</p>");
+	}
+?-->
 
 <form>
 	<div id="editContainer">
@@ -12,6 +60,7 @@
 				//Simple array for now. Will require a PHP db query
 				var Options = ["Check 1", "Check 2", "Check 3",
 				"Check 4", "Check 5", "Check 6", "Check...."];
+				
 				
 				for(var i = 0; i<Options.length; i++ ){
 					var link = document.createElement('option');

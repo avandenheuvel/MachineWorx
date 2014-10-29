@@ -49,7 +49,7 @@
 <html>
 	<head><title>Response page</title></head>
 	<body>
-		<h1>Your Account has been updated</h1>
+		<h1>Database Insert</h1>
 		<h2>You have submitted the following info:</h2>
 		
 		<?php
