@@ -12,7 +12,7 @@ function editPageSelect(){
 	document.getElementById("editTab").style.backgroundColor="#4DC3FF";
 }
 
-function changePhoto(){
+/*function changePhoto(){
 	var ext=document.getElementById("profImg").value.substring(document.getElementById("profImg").value.length-4);
 	if(ext=="jpeg"||ext==".png"||ext==".jpg"||ext==".gif"){
 		var reader=new FileReader();
@@ -23,7 +23,7 @@ function changePhoto(){
 	}else{
 		document.getElementById("profPic").src="../images/default.png";
 	}
-}
+}*/
 
 function validateCreation(){
 	var send=true;
@@ -47,7 +47,7 @@ function validateCreation(){
 		document.getElementById('passV').style.borderColor="#F00";
 		send=false;
 	}
-	if(document.getElementById('pass').value!=document.getElementById('passV')){
+	if(document.getElementById('pass').value!=document.getElementById('passV').value){
 		document.getElementById('pass').style.borderColor="#F00";
 		document.getElementById('passV').style.borderColor="#F00";
 		send=false;
@@ -59,8 +59,19 @@ function validateCreation(){
 }
 
 function createUser(){
+	var roles=document.getElementsByName('role')
+	var role;
+	for(var i=0; i<roles.length; i++){
+		if(roles[i].checked){
+			role=CryptoJS.MD5(roles[i].value);
+		}
+	}
 	var pass=CryptoJS.MD5(document.getElementById('pass').value);
-	var params="user="+document.getElementById('user').value+"&pass="+pass+"&fname="+document.getElementById('fname').value;
+	var params="user="+document.getElementById('user').value;
+	params+="&pass="+pass;
+	params+="&fname="+document.getElementById('fname').value;
+	params+="&lname="+document.getElementById('lname').value;
+	params+="&role="+role;
 	var xmlObj=new XMLHttpRequest();
 	xmlObj.open("POST", "../includes/createUser.php", true);
 	xmlObj.setRequestHeader('Content-type','application/x-www-form-urlencoded');
@@ -75,5 +86,5 @@ function createUser(){
 }
 
 function getResponse(response){
-	
+	alert(response);
 }

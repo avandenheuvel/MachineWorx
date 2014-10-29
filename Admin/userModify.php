@@ -4,9 +4,9 @@
 <div id="createUser">
 <form method="post" onsubmit="return validateCreation();">
 	<div id="statusDiv">Create New User:</div>
-	<img src="../images/default.png" id="profPic" width="200" height="200"/>
-    <input type="file" id="profImg" name="profImg" accept="image/jpeg, image/gif, image/png" onchange="changePhoto();"/>
-    <fieldset style="margin-left: 210px;">
+	<!--<img src="../images/default.png" id="profPic" width="200" height="200"/>
+    <input type="file" id="profImg" name="profImg" accept="image/jpeg, image/gif, image/png" onchange="changePhoto();"/>-->
+    <fieldset>
 	<label for="fname" class="txtLabel">First Name: </label>
 	<input type="text"  id="fname" name="fname"/>
     <label for="lname" class="txtLabel">Last Name: </label>
@@ -14,13 +14,13 @@
     <label for="user" class="txtLabel">Username: </label>
     <input id="user" name="user" type="text"/>
     </fieldset>
-    <fieldset style="margin-left: 210px;">
+    <fieldset>
     <label for="pass" class="txtLabel">Password: </label>
     <input id="pass" name="pass" type="password"/>
     <label for="passV" class="txtLabel">Re-Enter Password: </label>
     <input id="passV" name="passV" type="password"/>
     </fieldset>
-    <fieldset style="margin-left: 210px;">
+    <fieldset>
     <input id="role1" name="role" type="radio" value="1"/>
     <label for="role1">Administrator</label>
     <input id="role2" name="role" type="radio" value="2"/>
