@@ -37,7 +37,7 @@ function validateAndSend(){
 }
 
 function sendRequest(){
-	var params="username="+document.getElementById('username').value+"&password="+document.getElementById('password').value;
+	var params="username="+document.getElementById('username').value+"&password="+CryptoJS.MD5(document.getElementById('password').value);
 	var xmlObj=new XMLHttpRequest();
 	xmlObj.open("POST", base+"includes/login.php", true);
 	xmlObj.setRequestHeader('Content-type','application/x-www-form-urlencoded');

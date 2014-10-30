@@ -12,7 +12,19 @@ function editPageSelect(){
 	document.getElementById("editTab").style.backgroundColor="#4DC3FF";
 }
 
-function changePhoto(){
+function resetErrors(elements){
+	for(var i=0; i<elements.length; i++){
+		document.getElementById(elements[i]).style.borderColor="#4DC3FF";	
+	}
+}
+
+function setErrors(elements){
+	for(var i=0; i<elements.length; i++){
+		document.getElementById(elements[i]).style.borderColor="#F00";	
+	}
+}
+
+/*function changePhoto(){
 	var ext=document.getElementById("profImg").value.substring(document.getElementById("profImg").value.length-4);
 	if(ext=="jpeg"||ext==".png"||ext==".jpg"||ext==".gif"){
 		var reader=new FileReader();
@@ -23,35 +35,65 @@ function changePhoto(){
 	}else{
 		document.getElementById("profPic").src="../images/default.png";
 	}
-}
+}*/
 
 function validateCreation(){
 	var send=true;
-	if(document.getElementById('fname').value==""){
-		document.getElementById('fname').style.borderColor="#F00";
-		send=false;
-	}
-	if(document.getElementById('lname').value==""){
-		document.getElementById('lname').style.borderColor="#F00";
-		send=false;
-	}
-	if(document.getElementById('user').value==""){
-		document.getElementById('user').style.borderColor="#F00";
-		send=false;
-	}
-	if(document.getElementById('pass').value==""){
-		document.getElementById('pass').style.borderColor="#F00";
+	resetErrors(new Array('fname','lname','user','pass','passV'));
+	var errorArray=new Array();
+	var errorMessage=new Array();
+	if(document.getElementById('pass').value!=document.getElementById('passV').value){
+		if(errorArray.indexOf('pass')==-1) errorArray.push('pass');
+		if(errorArray.indexOf('passV')==-1) errorArray.push('passV');
+		document.getElementById('pass').focus();
+		errorMessage.push("the passwords do not match!");
 		send=false;
 	}
 	if(document.getElementById('passV').value==""){
-		document.getElementById('passV').style.borderColor="#F00";
+		errorArray.push('passV');
+		document.getElementById('passV').focus();
+		errorMessage.push("re-enter the password");
 		send=false;
 	}
-	if(document.getElementById('pass').value!=document.getElementById('passV')){
-		document.getElementById('pass').style.borderColor="#F00";
-		document.getElementById('passV').style.borderColor="#F00";
+	if(document.getElementById('pass').value==""){
+		errorArray.push('pass');
+		document.getElementById('pass').focus();
+		errorMessage.push("the password");
 		send=false;
 	}
+	if(document.getElementById('user').value==""){
+		errorArray.push('user');
+		document.getElementById('user').focus();
+		errorMessage.push("the username");
+		send=false;
+	}
+	if(document.getElementById('lname').value==""){
+		errorArray.push('lname');
+		document.getElementById('lname').focus();
+		errorMessage.push("the last name");
+		send=false;
+	}
+	if(document.getElementById('fname').value==""){
+		errorArray.push('fname');
+		document.getElementById('fname').focus();
+		errorMessage.push("the first name");
+		send=false;
+	}
+	setErrors(errorArray);
+	var errorString;
+	if(errorMessage.length==0){
+		errorString="Creating user!";
+	}else{
+		errorString="Please enter ";
+		for(var i=errorMessage.length-1; i>=0; i--){
+			errorString+=errorMessage[i];
+			if(i!=0){
+				errorString+=", ";
+			}
+		}
+		
+	}
+	document.getElementById('statusDiv').innerHTML=errorString;
 	if(send){
 		createUser();
 	}
@@ -59,8 +101,19 @@ function validateCreation(){
 }
 
 function createUser(){
+	var roles=document.getElementsByName('role')
+	var role;
+	for(var i=0; i<roles.length; i++){
+		if(roles[i].checked){
+			role=roles[i].value;
+		}
+	}
 	var pass=CryptoJS.MD5(document.getElementById('pass').value);
-	var params="user="+document.getElementById('user').value+"&pass="+pass+"&fname="+document.getElementById('fname').value;
+	var params="user="+document.getElementById('user').value;
+	params+="&pass="+pass;
+	params+="&fname="+document.getElementById('fname').value;
+	params+="&lname="+document.getElementById('lname').value;
+	params+="&role="+role;
 	var xmlObj=new XMLHttpRequest();
 	xmlObj.open("POST", "../includes/createUser.php", true);
 	xmlObj.setRequestHeader('Content-type','application/x-www-form-urlencoded');
@@ -75,5 +128,23 @@ function createUser(){
 }
 
 function getResponse(response){
-	
+	switch(response){
+		case "0": 
+			//success
+			document.getElementById('statusDiv').innerHTML="User successfully created!";
+			break;
+		case "1": 
+			//user exists
+			document.getElementById('statusDiv').innerHTML="That user already exists.";
+			setErrors([user]);
+			document.getElementById('user').focus();
+			break;
+		case "2":
+			//invalid info
+			document.getElementById('statusDiv').innerHTML="Invalid info was entered.";
+			break;
+		default:
+			document.getElementById('statusDiv').innerHTML="Sorry, something went wrong.";
+			break;
+	}
 }

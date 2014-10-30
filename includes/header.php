@@ -1,4 +1,5 @@
 <?php session_start();?>
+<script src="<?php echo _ROOT."includes/md5.js"?>" type="text/javascript"></script>
 <div id="wrapper">
 <div id="header">
 	<img id="headImg" src="<?php echo _ROOT . "images/headImg.png"?>" width="70" height="70"/>
