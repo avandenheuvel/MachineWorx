@@ -1,4 +1,7 @@
-<?php define('_ROOT', "../");?>
+<?php 
+define('_ROOT', "../");
+define('_ACCESS', 1);
+?>
 <!DOCTYPE html>
 <html>
 	<head>
