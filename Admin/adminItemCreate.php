@@ -14,7 +14,8 @@
 		<label for="txtInput"><h4>Check Description: Detailed description that will show up on checklist</h4></label>
 
 		<textarea id="checkDescDetail" name="checkDescDetail" rows="5" cols="50" class="txtInput" 
-			onblur="validate('checkDescDetail','checkDescDetailErr')"></textarea>	
+			onblur="validate('checkDescDetail','checkDescDetailErr')"
+			onfocus="resetError('checkDescDetailErr')"></textarea>	
 			<div id="checkDescDetailErr" class="error" ></div>
 		    
 	   </br>
