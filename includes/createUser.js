@@ -132,7 +132,6 @@ function getResponse(response){
 		case "0": 
 			//success
 			document.getElementById('statusDiv').innerHTML="User successfully created!";
-			document.getElementById('createForm').reset();
 			break;
 		case "1": 
 			//user exists

@@ -1,4 +1,3 @@
-<script src="../includes/md5.js" type="text/javascript"></script>
 <script src="../includes/createUser.js" type="text/javascript"></script>
 <div id="createTab" onclick="createPageSelect();">Create</div>
 <div id="createUser">
