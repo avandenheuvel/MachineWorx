@@ -6,7 +6,7 @@
         <link rel="icon" type="image/png" href="../favicon.png"/>
 		<link type="text/css" rel="stylesheet" href="../index.css"/>
 		<link type="text/css" rel="stylesheet" href="./adminForms.css"/>
-		<link type="text/css" rel="stylesheet" href="helpFiles/_popUpStyle.css"/>
+		<link type="text/css" rel="stylesheet" href="./helpFiles/_popUpStyle.css"/>
 		
 		<script src="validation.js"></script>
 		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
