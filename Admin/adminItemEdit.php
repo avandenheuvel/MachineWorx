@@ -1,12 +1,40 @@
 <script>
+	/*
+	 * Search check names to find appropriate description
+	 * In=<object> element holding the name
+	 * load value into CheckDesc textarea using JQuery .val() function
+	 */
 	function populateDesc(In){
-		$('#checkDesc').val(In.value);
+//********Consider implementing a more efficient search algorithm********//
+		var description = ""
+		for (var i = 0; i<checkNamesArray.length; i++){
+			if(checkNamesArray[i].Check_Name == In.value){
+				description = checkNamesArray[i].Check_Desc
+				$('#checkDesc').val(description);
+				switch (checkNamesArray[i].Check_Type){
+					case "Data Check":
+					document.getElementById("data").checked=true;
+					break;					
+					case "Item Check":
+					document.getElementById("item").checked=true;
+					break;
+					case "":
+					document.getElementById("item").checked=false;
+					document.getElementById("data").checked=false;
+				}
+				return;
+			}else{
+				$('#checkDesc').val("No descriptin found for "+In);
+			}
+		}		
 	}
 </script>
 
 <?php
 	/**
-	 * Connect to the databese and retrieve available items
+	 * Connect to the databese and retrieve available items/checks
+	 * Creates an array $arr[] used to store retrieved db values 
+	 * encoded in <script> used to generate web page
 	 */
 
 	$dsn = 'mysql:host=itsql.fvtc.edu;dbname=machineworx158';
@@ -19,7 +47,7 @@
 		$db = new PDO($dsn,$username,$ServerPassword,$options);
 			
 		
-		$SQL = $db->prepare("Select Check_Name from tblChecks");
+		$SQL = $db->prepare("Select * from tblChecks");
 		$SQL->execute();//execute the SQL query
 		$Check = $SQL->fetch();//Gets the first row of the table
 		
@@ -29,13 +57,15 @@
 			//Gets the current row value from the appropriate column
 			//$CheckID = $Check['CheckID'];
 			$CheckName = $Check['Check_Name'];
-			//$CheckDesc = $Check['Check_Desc'];
-			//$CheckType=$Check['Check_Type'];
+			$CheckDesc = $Check['Check_Desc'];
+			$CheckType=$Check['Check_Type'];
 			
-			$arr[] = array('Check_Name' => $CheckName/*, 'Check_Desc' => $CheckDesc*/);
+			$arr[] = array('Check_Name' => $CheckName, 'Check_Desc' => $CheckDesc, 'Check_Type' => $CheckType);
 			
 			$Check = $SQL->fetch();//fetch the next row*/
 		}
+		
+		//echo json_encode($arr); Used for troubleshooting of JSON data
 		
 		$SQL->closeCursor(); //disconnect from the server
 		$db = null; // Clear memory
@@ -46,6 +76,7 @@
 	}
 ?>
 
+
 <form>
 	<div id="editContainer">
 		<h2>Edit Item check</h2>
@@ -54,20 +85,20 @@
 			<a href class="link"onclick='setUpAdmin("Create Item"); return false;'>Create Items</a> page.</p><!--Calls function in adminOptions.php-->
 
 		<h4>Select Check</h4><select class="dropdown" id="available" onchange="populateDesc(this);">
+			<option>Choose check to edit...</option>
 			<script>
 				//Define options for building list of available checks to edit
 				
 				var checkNamesArray=<?=json_encode($arr)?>;
 				
-				//Build the list of available items
+				/*
+				 * Build the list of available items
+				 */
 				for(var i = 0; i<checkNamesArray.length; i++ ){
 					var link = document.createElement('option');
 					link.className = "";
 					link.textContent = checkNamesArray[i].Check_Name;
 					link.href = '#';
-					//link.style.width="100%";
-					//link.style.margin="1px";
-					link.onclick = function(){populateDesc(this);};
 					document.getElementById('available').appendChild(link);
 				}
 			</script>
