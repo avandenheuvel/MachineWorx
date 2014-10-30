@@ -1,5 +1,6 @@
 <?php session_start();?>
 <script src="<?php echo _ROOT."includes/md5.js"?>" type="text/javascript"></script>
+<script src="<?php echo _ROOT."includes/redirect.js"?>" type="text/javascript"></script>
 <div id="wrapper">
 <div id="header">
 	<img id="headImg" src="<?php echo _ROOT . "images/headImg.png"?>" width="70" height="70"/>
@@ -24,6 +25,12 @@
 			echo "Welcome, $fname $lname!<br/>You're logged in as: $role";
 			echo "</div>";
 			echo "<a href=\""._ROOT."includes/logout.php\"><div id=\"logOutBtn\">Logout</div></a>";
+			if(_ACCESS!=0){
+				if($_SESSION['role']!=_ACCESS){
+					echo "<script type=\"text/javascript\">redirect(\""._ROOT."\");</script>";
+					die();	
+				}
+			}
 		}else{
 			echo (
 			"<script type=\"text/javascript\">var base=\""._ROOT."\";</script>
@@ -40,6 +47,10 @@
 			</form>
 			</div>"
 			);
+			if(_ACCESS!=0){
+				echo "<script type=\"text/javascript\">redirect(\""._ROOT."\");</script>";
+				die();
+			}
 		}
 ?>
 </div>
