@@ -2,7 +2,7 @@
 <script src="../includes/createUser.js" type="text/javascript"></script>
 <div id="createTab" onclick="createPageSelect();">Create</div>
 <div id="createUser">
-<form method="post" onsubmit="return validateCreation();">
+<form id="createForm" method="post" onsubmit="return validateCreation();">
 	<div id="statusDiv">Create New User:</div>
 	<!--<img src="../images/default.png" id="profPic" width="200" height="200"/>
     <input type="file" id="profImg" name="profImg" accept="image/jpeg, image/gif, image/png" onchange="changePhoto();"/>-->
