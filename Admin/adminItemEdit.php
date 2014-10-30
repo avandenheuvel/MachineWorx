@@ -1,8 +1,3 @@
-<!--Initialize array-->
-<script>
-	var checkNamesArray=new Array();
-		alert("array init");
-</script>
 
 <?php
 	
@@ -16,7 +11,7 @@
 		$db = new PDO($dsn,$username,$ServerPassword,$options);
 			
 		
-		$SQL = $db->prepare("Select Check_Name from tblChecks");
+		$SQL = $db->prepare("Select * from tblChecks");
 		$SQL->execute();//execute the SQL query
 		$Check = $SQL->fetch();//Gets the first row of the table
 		
@@ -26,17 +21,15 @@
 			//Gets the current row value from the appropriate column
 			//$CheckID = $Check['CheckID'];
 			$CheckName = $Check['Check_Name'];
-			//$CheckDesc = $Check['Check_Desc'];
+			$CheckDesc = $Check['Check_Desc'];
 			//$CheckType=$Check['Check_Type'];
 			
-			//Adds values to javascript array
-			//echo("<script>");
-				echo("<p>$CheckName</p>");
-				//echo('checkNamesArray.push($CheckName);');
-			//echo("</script>");
+			$arr[] = array('Check_Name' => $CheckName/*, 'Check_Desc' => $CheckDesc*/);
 			
 			$Check = $SQL->fetch();//fetch the next row*/
 		}
+
+		//echo json_encode($arr);
 		
 		$SQL->closeCursor(); //disconnect from the server
 		$db = null; // Clear memory
@@ -46,6 +39,10 @@
 		echo("<p>Database error: $error_message</p>");
 	}
 ?>
+
+<script>
+	var checkNamesArray=<?=json_encode($arr)?>;
+</script>
 
 <form>
 	<div id="editContainer">
@@ -65,7 +62,7 @@
 				for(var i = 0; i<checkNamesArray.length; i++ ){
 					var link = document.createElement('option');
 					link.className = "";
-					link.textContent = checkNamesArray[i];
+					link.textContent = checkNamesArray[i].Check_Name;
 					link.href = '#';
 					//link.style.width="100%";
 					//link.style.margin="1px";
