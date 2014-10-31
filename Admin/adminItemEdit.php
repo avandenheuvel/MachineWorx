@@ -2,7 +2,7 @@
 	/*
 	 * Search check names to find appropriate description
 	 * In=<object> element holding the name
-	 * load value into CheckDesc textarea using JQuery .val() function
+	 * load value into checkDescDetail textarea using JQuery .val() function
 	 */
 	function populateDesc(In){
 //********Consider implementing a more efficient search algorithm********//
@@ -10,7 +10,7 @@
 		for (var i = 0; i<checkNamesArray.length; i++){
 			if(checkNamesArray[i].Check_Name == In.value){
 				description = checkNamesArray[i].Check_Desc
-				$('#checkDesc').val(description);
+				$('#checkDescDetail').val(description);
 				switch (checkNamesArray[i].Check_Type){
 					case "Data Check":
 					document.getElementById("data").checked=true;
@@ -24,7 +24,7 @@
 				}
 				return;
 			}else{
-				$('#checkDesc').val("No descriptin found for "+In);
+				$('#checkDescDetail').val("No descriptin found for "+In);
 			}
 		}		
 	}
@@ -77,14 +77,14 @@
 ?>
 
 
-<form>
+<form name="editItem" action="adminItemEditRESPONSE.php" method="post">
 	<div id="editContainer">
 		<h2>Edit Item check</h2>
 		<p>Edit the items checks by picking items from the dropdown menu and updating it's description.
 			If the item check you require is not available it can be made on the
 			<a href class="link"onclick='setUpAdmin("Create Item"); return false;'>Create Items</a> page.</p><!--Calls function in adminOptions.php-->
 
-		<h4>Select Check</h4><select class="dropdown" id="available" onchange="populateDesc(this);">
+		<h4>Select Check</h4><select class="dropdown" id="available" name="available" onchange="populateDesc(this);">
 			<option>Choose check to edit...</option>
 			<script>
 				//Define options for building list of available checks to edit
@@ -108,7 +108,10 @@
 	
 		<!--Area for user to select which item to edit-->
 		<label for="txtInput">Check Description: </label>
-		<textarea id="checkDesc" rows="5" cols="50" class="txtInput"></textarea>	
+		<textarea id="checkDescDetail" name="checkDescDetail" rows="5" cols="50" class="txtInput"
+			onblur="validate('checkDescDetail','checkDescErr')"
+			onfocus="resetError('checkDescErr')"></textarea>	
+		<div id="checkDescErr" class="error" ></div></textarea>	
 		    
 	   </br>
 	    <!--Select the type of item-->
@@ -122,7 +125,7 @@
 	</div><!--End editContainer-->	
 	
 	<div class="formButton">
-		    <input type=submit id="btnSubmit" name="submitItemEdit" value="Submit" />
+		    <input type=submit id="btnSubmit" name="submitItemEdit" action="adminItemEditRESPONSE.php" method="post" value="Submit" />
 		    <input type=reset	 id="btnReset" name="cancelItemEdit" value="Cancel"/>
 	    </div>
 </form>

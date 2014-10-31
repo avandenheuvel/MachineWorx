@@ -16,7 +16,7 @@
 		<textarea id="checkDescDetail" name="checkDescDetail" rows="5" cols="50" class="txtInput" 
 			onblur="validate('checkDescDetail','checkDescDetailErr')"
 			onfocus="resetError('checkDescDetailErr')"></textarea>	
-			<div id="checkDescDetailErr" class="error" ></div>
+		<div id="checkDescDetailErr" class="error" ></div>
 		    
 	   </br>
 	    <!--Select the type of item-->
