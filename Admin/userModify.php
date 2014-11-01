@@ -33,5 +33,6 @@
 </div>
 <div id="editTab" onclick="editPageSelect();">Edit</div>
 <div id="editUser">
-&nbsp;
+<input type="text" id="unSearch" name="unSearch" onkeyup="getUsers();"/>
+<div id="sResults"></div>
 </div>
