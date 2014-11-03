@@ -7,44 +7,49 @@
 	//Get verified variables from the user form
 	
 	//Regular expressions used for validation
+	$namePattern = "/^\s*[a-zA-Z,\s]+\s*$/";
+	$phonePattern="/^\d\d\d\-\d\d\d\-\d\d\d\d$/";
 	$blankPattern="/\w/";
+	$zipPattern="/^\d{5}(-\d{4})?$/";
+	$eMailPattern="/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/";
 	
-	if(isset($_POST['available'])){
-		$simpleDesc=$_POST['available'];
+	if(isset($_POST['checkDescSimple'])){
+		$simpleDesc=$_POST['checkDescSimple'];
+		
 		if(!preg_match($blankPattern, $simpleDesc)){//updated error check to verify length
 			echo'<script>$(function() {
-				$("#include").load("adminItemCreate.php");	
+				$("#include").load("userModify.php");	
 			});</script>';
 			exit();
 		}
 	}
 	
-	//if(isset($_POST['checkDescDetail'])){
+	if(isset($_POST['checkDescDetail'])){
 		$detailedDesc=$_POST['checkDescDetail'];
 		
 		if(!preg_match($blankPattern, $detailedDesc)){//updated error check to verify length
-			//header('Location:index.php');
+			header('Location:index.php');
 			echo'<script>alert("2");</script>'; 
 			exit();
 		}
-	//}
+	}
 	
-	//if(isset($_POST['checkType'])){
+	if(isset($_POST['checkType'])){
 		$checkType=$_POST['checkType'];
 		
 		if(!preg_match($blankPattern, $checkType)){//updated error check to verify length
-			//header('Location:index.php');
+			header('Location:index.php');
 			echo'<script>alert("");</script>'; 
 			exit();
 		}
-	//}
+	}
 ?>
 
 
 <html>
 	<head><title>Response page</title></head>
 	<body>
-		<h1>Database Update</h1>
+		<h1>Database Insert</h1>
 		<h2>You have submitted the following info:</h2>
 		
 		<?php
@@ -58,12 +63,11 @@
 		try{
 			$db = new PDO($dsn,$username,$ServerPassword,$options);	
 			
-			$update = "
-				UPDATE tblChecks
-				SET Check_Type = :Check_Type, Check_Desc = :Check_Desc
-				WHERE Check_Name = :Check_Name";
+			$Insert= "Insert Into tblChecks
+			(Check_Name, Check_Desc, Check_Type) 
+			Value(:Check_Name, :Check_Desc, :Check_Type)";
 			
-			$SQL = $db->prepare($update);
+			$SQL = $db->prepare($Insert);
 			
 			$SQL->bindValue(':Check_Name', $simpleDesc);
 			$SQL->bindValue(':Check_Desc', $detailedDesc);

@@ -34,7 +34,7 @@ function testInput(str, inID) {
 		break;
 		
 		//Check that detailed description has between 10 and 140 characters
-		case (inID == "checkDescDetail") :
+		case (inID == "checkDescDetail") || (inID=="subAssyName") :
 			if(/^.{10,4000}$/.test(str) == true){
 				result = "";
 			}else{
@@ -43,7 +43,7 @@ function testInput(str, inID) {
 		break;
 		
 		//Check that simple description has between 10 and 40 characters
-		case (inID == "checkDescSimple") :
+		case (inID == "checkDescSimple") || (inID=="subAssyName"):
 			if(/^.{10,40}$/.test(str) == true){
 				result = "";
 			}else{
