@@ -148,3 +148,23 @@ function getResponse(response){
 			break;
 	}
 }
+
+function getUsers(){
+	var user=document.getElementById("unSearch").value;
+	var params="user="+user;
+	var xmlObj=new XMLHttpRequest();
+	xmlObj.open("POST", "../includes/searchUsers.php", true);
+	xmlObj.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+	xmlObj.setRequestHeader("Content-length", params.length);
+	xmlObj.setRequestHeader("Connection", "close");
+	xmlObj.onreadystatechange = function() {
+		if(xmlObj.readyState == 4 && xmlObj.status == 200) {
+			displayUsers(xmlObj.responseText);
+		}
+	}
+	xmlObj.send(params);
+}
+
+function displayUsers(data){
+	document.getElementById('sResults').innerHTML=data;
+}
