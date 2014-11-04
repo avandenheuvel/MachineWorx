@@ -10,6 +10,7 @@ function editPageSelect(){
 	document.getElementById("createUser").style.display="none";
 	document.getElementById("createTab").style.backgroundColor="#DDD";
 	document.getElementById("editTab").style.backgroundColor="#4DC3FF";
+	getUsers();
 }
 
 function resetErrors(elements){
@@ -166,5 +167,113 @@ function getUsers(){
 }
 
 function displayUsers(data){
-	document.getElementById('sResults').innerHTML=data;
+	document.getElementById('sResults').innerHTML="<table>"+data+"</table>";
+}
+
+function pullUserInfo(user){
+	var params="userID="+user;
+	var sock=new XMLHttpRequest();
+	sock.open("POST", "../includes/getUser.php", true);
+	sock.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+	sock.setRequestHeader("Content-length", params.length);
+	sock.setRequestHeader("Connection", "close");
+	sock.onreadystatechange = function() {
+		if(sock.readyState == 4 && sock.status == 200) {
+			setForm(sock.responseText);
+		}
+	}
+	sock.send(params);
+}
+
+function setForm(user){
+	var userInfo=user.split("[|]");
+	document.getElementById('searchPage').style.display="none";
+	document.getElementById('editPage').style.display="block";
+	document.getElementById('editStatus').innerHTML="Edit user " + userInfo[0] + ":";
+	document.getElementById('editFName').value=userInfo[1];
+	document.getElementById('origFName').value=userInfo[1];
+	document.getElementById('editLName').value=userInfo[2];
+	document.getElementById('origLName').value=userInfo[2];
+	document.getElementById('origRole').value=userInfo[3];
+	switch(userInfo[3]){
+		case "1":
+			document.getElementById('editRole1').checked=true;
+			break;
+		case "2":
+			document.getElementById('editRole2').checked=true;
+			break;
+		case "3":
+			document.getElementById('editRole3').checked=true;
+			break;
+		default:
+			break;	
+	}
+	document.getElementById('uId').value=userInfo[4];
+}
+
+function deleteUser(){
+	var params="userID="+document.getElementById('uId').value;
+	var sock=new XMLHttpRequest();
+	sock.open("POST", "../includes/deleteUser.php", true);
+	sock.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+	sock.setRequestHeader("Content-length", params.length);
+	sock.setRequestHeader("Connection", "close");
+	sock.onreadystatechange = function() {
+		if(sock.readyState == 4 && sock.status == 200) {
+			alert(sock.responseText);
+			backToSearch();
+		}
+	}
+	sock.send(params);
+}
+
+function editUser(){
+	var params="";
+	if(document.getElementById('origFName').value!=document.getElementById('editFName').value){
+		if(document.getElementById('editFName').value==""){
+			//invalid input
+		}else{
+			//valid input
+		}
+	}
+	if(document.getElementById('origLName').value!=document.getElementById('editLName').value){
+		if(document.getElementById('editLName').value==""){
+			//invalid input
+		}else{
+			//valid input
+		}
+	}
+	if(document.getElementById('editPass').value!=""){
+		if(document.getElementById('editPass').value!=document.getElementById('editPassV').value){
+			//invalid input
+		}else{
+			//valid input	
+		}
+	}
+	var role;
+	if(document.getElementById('editRole1').checked==true){
+		role=document.getElementById('editRole1').value;
+	}
+	if(document.getElementById('editRole2').checked==true){
+		role=document.getElementById('editRole2').value;
+	}
+	if(document.getElementById('editRole3').checked==true){
+		role=document.getElementById('editRole3').value;
+	}
+	if(document.getElementById('origRole').value!=role){
+		params+="&role="+role;
+	}
+	params+="&user="+document.getElementById('uId').value
+	sendUserEdit(params);
+}
+
+function sendUserEdit(params){
+	alert(params);
+}
+
+function backToSearch(){
+	document.getElementById('searchPage').style.display="block";
+	document.getElementById('editPage').style.display="none";
+	document.getElementById('unSearch').value="";
+	getUsers();
 }
