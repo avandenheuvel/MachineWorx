@@ -79,11 +79,17 @@
 	    .end()
 	}
 	
+	function selectAll(){
+		for (var i = 0; i < document.getElementById("select2").options.length; i++){
+			document.getElementById("select2").options[i].selected = true;
+		}
+	return true;
+	}
 </script>
 
 
 
-	<form name="adminSubAssyCreate" Method="post" action="adminSubAssyCreateRESPONSE.php">
+	<form name="adminSubAssyCreate" onsubmit="return selectAll()" Method="post" action="adminSubAssyCreateRESPONSE.php">
 		<div id="editContainer">
 		<h2>Create Sub-Assembly</h2>
 		<p>Set up sub assembly by picking items from the available items section and moving them
@@ -124,7 +130,7 @@
 			
 			<div id="column2right">
 				<h3>Selected Items:</h3>
-				<select size=12 id="select2" name="select2" class="selectLarge"></select>
+				<select multiple size=12 id="select2" name="select2[]" class="selectLarge"></select>
 				<input type=button class="button" id="move up" name="moveUp" value="Move Up" />
 				<input type=button class="button" id="move down"  name="moveDown" value="Move Down" />
 			</div>
