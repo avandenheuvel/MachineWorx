@@ -11,13 +11,19 @@
 	$options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 
 	try {
-		$queryString = "SELECT User_Username, User_FName, User_LName, User_Role FROM tblUsers WHERE User_Username LIKE '".$user."%'";
+		$queryString = "SELECT UserID, User_Username, User_FName, User_LName, User_Role FROM tblUsers WHERE User_Username LIKE '".$user."%'";
 		$db = new PDO($dsn, $username, $password, $options);
 		$query = $db->prepare($queryString); 
 		$query->execute();
 		
 		while($row = $query->fetch(PDO::FETCH_ASSOC)){
-			echo "<div>Username: ".$row['User_Username']." First Name: ".$row['User_FName']." Last Name: ".$row['User_LName']." Role: ".$row['User_Role']."</div>";
+			echo ("<tr onclick=\"pullUserInfo('".$row['UserID']."');\">
+					<td>".$row['UserID']."</td>
+					<td>".$row['User_Username']."</td>
+					<td>".$row['User_FName']."</td>
+					<td>".$row['User_LName']."</td>
+					<td>".$row['User_Role']."</td>
+				</tr>");
 		}
 		
 		$query->closeCursor();

@@ -33,6 +33,50 @@
 </div>
 <div id="editTab" onclick="editPageSelect();">Edit</div>
 <div id="editUser">
+<div id="searchPage">
+<label for="unSearch">Search Users: </label>
 <input type="text" id="unSearch" name="unSearch" onkeyup="getUsers();"/>
+<table id="userTable">
+	<tr>
+    	<th>ID</th>
+        <th>Username</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Role</th>
+    </tr>
+</table>
 <div id="sResults"></div>
+</div>
+<div id="editPage">
+    <form id="editForm">
+        <div id="editStatus">Edit User: </div>
+        <input type="hidden" id="uId" name="uId"/>
+        <input type="hidden" id="origFName" name="origFName"/>
+        <input type="hidden" id="origLName" name="origLName"/>
+        <input type="hidden" id="origRole" name="origRole"/>
+        <fieldset>
+            <label for="editFName" class="txtLabel">First Name: </label>
+            <input type="text"  id="editFName" name="editFName"/>
+            <label for="editLName" class="txtLabel">Last Name: </label>
+            <input id="editLName" name="editLName" type="text"/>
+        </fieldset>
+        <fieldset>
+            <label for="editPass" class="txtLabel">Change Password: </label>
+            <input id="editPass" name="editPass" type="password"/>
+            <label for="editPassV" class="txtLabel">Re-Enter New Password: </label>
+            <input id="editPassV" name="editPassV" type="password"/>
+        </fieldset>
+        <fieldset>
+            <input id="editRole1" name="editRole" type="radio" value="1"/>
+            <label for="editRole1">Administrator</label>
+            <input id="editRole2" name="editRole" type="radio" value="2"/>
+            <label for="editRole2">Technician</label>
+            <input id="editRole3" name="editRole" type="radio" value="3" checked/>
+            <label for="editRole3">Customer</label>
+        </fieldset>
+        <input type="button" id="backBtn" value="Back" onclick="backToSearch();"/>
+        <input type="button" id="editBtn" value="Edit User" onclick="editUser();"/>
+        <input type="button" id="deleteBtn" value="Delete User" onclick="deleteUser();"/>
+    </form>
+</div>
 </div>

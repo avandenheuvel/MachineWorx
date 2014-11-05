@@ -238,70 +238,6 @@ input[type=text], input[type=password]{
 	width: 140px;
 }
 
-/*label[for="lname"]{
-	margin-left: 360px;
-	margin-top: 0px;
-	position: absolute;	
-	color: #0F0;
-}
-
-label[for="fname"]{
-	position: absolute;
-	color #F00;	
-	margin-left: 210px;
-	margin-top: 0px;
-}
-
-#lname {
-	position: absolute;
-	margin-left: 360px;	
-	margin-top: 20px;
-	background-color: #0F0;
-}
-
-#fname {
-	position: absolute;
-	margin-top: 20px;
-	margin-left: 210px;
-	background-color: #F00;
-}
-
-label[for="user"]{
-	position: absolute;
-	margin-left:210px;
-	margin-top: 80px;	
-}
-
-#user {
-	position: absolute;
-	margin-left: 210px;
-	margin-top: 100px;
-}
-
-label[for="pass"]{
-	position: absolute;
-	margin-left: 210px;
-	margin-top: 130px;	
-}
-
-#pass {
-	position: absolute;
-	margin-left: 210px;
-	margin-top: 150px;
-}
-
-label[for="passV"]{
-	position: absolute;
-	margin-left: 360px;
-	margin-top: 130px;	
-}
-
-#passV {
-	position: absolute;
-	margin-left: 360px;
-	margin-top: 150px;
-}*/
-
 #submit {
 	position: absolute;
 	bottom: 10px;
@@ -330,10 +266,47 @@ label[for="passV"]{
 	overflow-y: auto;
 }
 
-#statusDiv {
+#searchPage {
+	display: block;	
+}
+
+#editPage {
+	display: none;	
+}
+
+#userTable {
+	width: 100%;	
+}
+
+#userTable tr th {
+	width: 20%;	
+	text-align: center;
+}
+
+#sResults {
+	width: 100%;
+}
+
+#sResults table {
+	width: 100%;
+}
+
+#sResults table tr:hover {
+	background-color: #4DC3FF;
+}
+
+#sResults table tr td {
+	width: 20%;	
+	cursor: pointer;
+	text-align: center;
+	border: 0;
+}
+
+/*#statusDiv {
 	margin-left: 210px;	
 }
 
 #createUser fieldset {
 	margin-top: 0;	
-}
+
+}*/
