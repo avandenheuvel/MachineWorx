@@ -50,6 +50,7 @@
 	padding: 10px;
 	cursor: pointer;
 	font-size: 18px;
+	color: #444;
 }
 
 #left:hover, #mid:hover, #right:hover {

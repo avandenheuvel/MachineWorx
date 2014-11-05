@@ -212,6 +212,7 @@ function setForm(user){
 }
 
 function deleteUser(){
+	if(window.confirm("Are you sure you want to delete this user?")){
 	var params="userID="+document.getElementById('uId').value;
 	var sock=new XMLHttpRequest();
 	sock.open("POST", "../includes/deleteUser.php", true);
@@ -225,29 +226,41 @@ function deleteUser(){
 		}
 	}
 	sock.send(params);
+	}
 }
 
 function editUser(){
-	var params="";
+	var params=new Array();
+	var send=true;
+	resetErrors(new Array("editFName","editLName","editPass","editPassV"));
+	var errorArray=new Array();
+	var errorStr="";
 	if(document.getElementById('origFName').value!=document.getElementById('editFName').value){
 		if(document.getElementById('editFName').value==""){
-			//invalid input
+			send=false;
+			errorArray.push("editFName");
+			errorStr+="The first name is blank. ";
 		}else{
-			//valid input
+			params.push("fname", document.getElementById('editFName').value);
 		}
 	}
 	if(document.getElementById('origLName').value!=document.getElementById('editLName').value){
 		if(document.getElementById('editLName').value==""){
-			//invalid input
+			send=false;
+			errorArray.push("editLName");
+			errorStr+="The last name is blank. ";
 		}else{
-			//valid input
+			params.push("lname", document.getElementById('editLName').value);
 		}
 	}
 	if(document.getElementById('editPass').value!=""){
 		if(document.getElementById('editPass').value!=document.getElementById('editPassV').value){
-			//invalid input
+			send=false;
+			errorArray.push("editPass");
+			errorArray.push("editPassV");
+			errorStr+="The passwords are incorrectly entered. ";
 		}else{
-			//valid input	
+			params.push("pass", CryptoJS.MD5(document.getElementById('editPass').value));
 		}
 	}
 	var role;
@@ -261,14 +274,40 @@ function editUser(){
 		role=document.getElementById('editRole3').value;
 	}
 	if(document.getElementById('origRole').value!=role){
-		params+="&role="+role;
+		params.push("role", role);
 	}
-	params+="&user="+document.getElementById('uId').value
-	sendUserEdit(params);
+	setErrors(errorArray);
+	params.push("user", document.getElementById('uId').value);
+	if(params.length<4){
+		errorStr+="You didn't change anything!";
+	}
+	document.getElementById('info').innerHTML=errorStr;
+	if(send&&params.length>2){
+		var pStr="";
+		for(var i=0; i<params.length; i+=2){
+			if(i==0){
+				pStr+=params[i]+"="+params[i+1];
+			}else{
+				pStr+="&"+params[i]+"="+params[i+1];
+			}
+		}
+		sendUserEdit(pStr);
+	}
 }
 
 function sendUserEdit(params){
-	alert(params);
+	var sock=new XMLHttpRequest();
+	sock.open("POST", "../includes/editUser.php", true);
+	sock.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+	sock.setRequestHeader("Content-length", params.length);
+	sock.setRequestHeader("Connection", "close");
+	sock.onreadystatechange = function() {
+		if(sock.readyState == 4 && sock.status == 200) {
+			alert(sock.responseText);
+			backToSearch();
+		}
+	}
+	sock.send(params);
 }
 
 function backToSearch(){
