@@ -25,7 +25,22 @@ define('_ACCESS', 0);
             	<img id="topSlide" src="./images/gear.png"/>
                 </div>
             </div>
-            <a href="">
+            <a 
+			<?php 
+				if(isset($_SESSION['role'])){
+					if($_SESSION['role']==1){
+						echo "href=\"./Admin\"";
+					}
+					if($_SESSION['role']==2){
+						echo "href=\"./Tech\"";
+					}
+					if($_SESSION['role']==3){
+						echo "href=\"./Customer\"";
+					}
+				}else{
+					echo "onclick=\"alert('You must be logged in to manage equipment.');\"";
+				} 
+			?>>
             <div id="left">
             <div class="textUnderlay">
             	<h1>Equipment</h1>
