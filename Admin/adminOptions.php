@@ -35,6 +35,7 @@
 			}
 			
 			switch(dataArea){
+				
 				case "Create/Edit User":
 					$(function() {
 						$("#include").load("userModify.php");	

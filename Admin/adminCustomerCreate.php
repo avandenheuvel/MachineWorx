@@ -44,13 +44,15 @@
 
 	<form name="adminSubAssyCreate" Method="post" action="">
 		<div id="editContainer">
-		<h2>Create Sub-Assembly</h2>
-		<p>Set up sub assembly by picking items from the available items section and moving them
-			to the selected items area. If the check you require is not available it can be made on the
-			<a href class="link"onclick='setUpAdmin("Create Item"); return false;'>Create Items</a> page.</p><!--Calls function in adminOptions.php-->
+		<h2>Create Customer</h2>
+		<p>Set up the customer by picking the Machines from the available items section and moving them
+			to the selected items area. If the machine you require is not available it can be made on the
+			<a href class="link"onclick='setUpAdmin("Create Machine"); return false;'>Create Machine</a> page.</p><!--Calls function in adminOptions.php-->
 			
+			<label for="txtInput"><h4><strong> Customer name: </h4></label>
+			<textarea rows="1" cols="50" maxlength="40" class="txtInput"></textarea>
 			<div id="column1">
-			<h3>Available items</h3>	
+			<h3>Available Machines</h3>	
 				<select multiple size=12 id="select1" class="selectLarge">
 					<script>//Define options for building list of available checks to edit
 					
@@ -74,7 +76,7 @@
 			</div>
 			
 			<div id="column2right">
-				<h3>Selected Items:</h3>
+				<h3>Selected Machines:</h3>
 				<select size=12 id="select2" class="selectLarge"></select>
 				<input type=button class="button" id="move up" name="moveUp" value="Move Up" />
 				<input type=button class="button" id="move down"  name="moveDown" value="Move Down" />
