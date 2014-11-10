@@ -27,7 +27,7 @@
 	<head><title>Response page</title></head>
 	<body>
 		<h1>Database Insert</h1>
-		<h2>You have prepared the following info(Not submitted):</h2>
+		<h2>You have prepared the following items for submission:</h2>
 		
 
 		
