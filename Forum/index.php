@@ -1,13 +1,13 @@
-<?php define('_ROOT', "../"); 
+<?php 
+define('_ROOT', "../"); 
 define('_ACCESS', 0);
 ?>
 
-<!DOCTYPE html>
-<html>
 	<head>
 		<title>machineWorx</title>
         <link rel="icon" type="image/png" href="../favicon.png"/>
 		<link href="../index.css" type="text/css" rel="stylesheet"/>
+		<link href="./style.css" type="text/css" rel="stylesheet"/>
 		
 	</head>
 	
@@ -103,8 +103,7 @@ define('_ACCESS', 0);
 			}
 		?>
 
-
-		
-		<?php include_once("../includes/footer.php");?>
+		<?php 
+		include('footer.php');
+		include_once("../includes/footer.php");?>
 	</body>
-</html>
