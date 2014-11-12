@@ -1,5 +1,10 @@
+<link rel="icon" type="image/png" href="../favicon.png"/>
+<link href="../index.css" type="text/css" rel="stylesheet"/>
+<link href="./style.css" type="text/css" rel="stylesheet"/>
+
 <?php
 //create_cat.php
+include_once("../includes/header.php");
 include 'connect.php';
 include 'header.php';
 

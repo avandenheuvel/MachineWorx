@@ -12,10 +12,10 @@ define('_ACCESS', 0);
 	</head>
 	
 	<body>
-		<?php include_once("../includes/header.php");?>
 		
 		<?php
 			//create_cat.php
+			include_once("../includes/header.php");
 			include 'connect.php';
 			include 'header.php';
 			

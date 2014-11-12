@@ -1,4 +1,15 @@
+<?php 
+define('_ROOT', "../"); 
+define('_ACCESS', 0);
+?>
+
+<link rel="icon" type="image/png" href="../favicon.png"/>
+<link href="../index.css" type="text/css" rel="stylesheet"/>
+<link href="./style.css" type="text/css" rel="stylesheet"/>
+
 <?php
+
+include_once("../includes/header.php");
 //category.php
 include 'connect.php';
 include 'header.php';

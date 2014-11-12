@@ -57,12 +57,16 @@ table {
 	width: 100%;
 }
 
-table a {
-	color: #000;
+table a:link{
+	color:#c0c0c0;
+}
+
+table a:visited{
+	color:#c0c0c0;
 }
 
 table a:hover {
-	color:#373737;
+	color:#00ff40;
 	text-decoration: none;
 }
 
