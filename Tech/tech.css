@@ -1,21 +1,26 @@
 #adminOptCont {
 	border-radius: 5px;	
+	border: 2px solid #4DC3FF;
 	background-color: #333;
 }
 
 #adminOptCont div {
 	cursor: pointer;	
-	padding: 3px;
+}
+
+#adminOptCont div:hover {
+	background-color: #4DC3FF;
+	color: #333;
 }
 
 .lev1 {
-	margin-left: 5px;
+	padding: 3px 3px 3px 5px;
 }
 
 .lev2 {
-	margin-left: 15px;
+	padding: 3px 3px 3px 15px;
 }
 
 .lev3 {
-	margin-left: 25px;
+	padding: 3px 3px 3px 25px;
 }
