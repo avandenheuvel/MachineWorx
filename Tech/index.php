@@ -9,21 +9,16 @@ define('_ACCESS', 2);
         <link rel="icon" type="image/png" href="../favicon.png"/>
 		<link type="text/css" rel="stylesheet" href="../index.css"/>
 		<link type="text/css" rel="stylesheet" href="../Admin/adminForms.css"/>
-		<link type="text/css" rel="stylesheet" href="_styles.css" />
-		
-        <script type="text/javascript">
-			function nextFolder(id){
-				alert("Get all items with parent id of: "+id);	
-			}
-		</script>
+        <link type="text/css" rel="stylesheet" href="./tech.css"/>
+		<script src="./tree.js" type="text/javascript"></script>
         
 	</head>
-	<body>
+	<body onload="updateTree(0,0,'adminOptCont');">
 		<?php include("../includes/header.php");?>
 		<div id="adminContainer">
 			<H1>Technician Data Entry</H1>
 			<div id="adminOptCont">
-				<?php include('./loadTree.php');?>
+            	<!--Dynamically load tree from javascript.-->
 			</div>
 			<div id="adminDataArea">
 				<?php include('techDataArea.php');?>

@@ -1,0 +1,21 @@
+#adminOptCont {
+	border-radius: 5px;	
+	background-color: #333;
+}
+
+#adminOptCont div {
+	cursor: pointer;	
+	padding: 3px;
+}
+
+.lev1 {
+	margin-left: 5px;
+}
+
+.lev2 {
+	margin-left: 15px;
+}
+
+.lev3 {
+	margin-left: 25px;
+}
