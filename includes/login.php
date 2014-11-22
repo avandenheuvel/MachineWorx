@@ -14,7 +14,7 @@
 	$options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
 
 	try {
-		$queryString = "SELECT User_FName, User_LName, User_Password, User_Role FROM tblUsers WHERE User_Username = :username";
+		$queryString = "SELECT UserID, User_FName, User_LName, User_Password, User_Role FROM tblUsers WHERE User_Username = :username";
 		$db = new PDO($dsn, $username, $password, $options);
 		$query = $db->prepare($queryString); 
 		$query -> bindParam(':username', $user);
@@ -26,6 +26,7 @@
 		} else {
 			$pwd=$row['User_Password'];
 			if($pwd==$pass){
+				$_SESSION['id']=$row['UserID'];
 				$_SESSION['fname']=$row['User_FName'];
 				$_SESSION['lname']=$row['User_LName'];
 				$_SESSION['username']=$user;
