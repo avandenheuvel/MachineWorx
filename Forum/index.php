@@ -5,6 +5,7 @@ define('_ACCESS', 0);
 
 	<head>
 		<title>machineWorx</title>
+		
         <link rel="icon" type="image/png" href="../favicon.png"/>
 		<link href="../index.css" type="text/css" rel="stylesheet"/>
 		<link href="./style.css" type="text/css" rel="stylesheet"/>

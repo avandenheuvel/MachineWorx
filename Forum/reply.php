@@ -1,3 +1,5 @@
+
+
 <link rel="icon" type="image/png" href="../favicon.png"/>
 <link href="../index.css" type="text/css" rel="stylesheet"/>
 <link href="./style.css" type="text/css" rel="stylesheet"/>
@@ -16,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] != 'POST')
 else
 {
 	//check for sign in status
-	if(!$_SESSION['signed_in'])
+	if(!$_SESSION['role'])
 	{
 		echo 'You must be signed in to post a reply.';
 	}
@@ -31,7 +33,7 @@ else
 				VALUES ('" . $_POST['reply-content'] . "',
 						NOW(),
 						" . mysql_real_escape_string($_GET['id']) . ",
-						" . $_SESSION['user_id'] . ")";
+						" . $_SESSION['userID'] . ")";
 						
 		$result = mysql_query($sql);
 						

@@ -1,3 +1,8 @@
+<?php 
+define('_ROOT', "../"); 
+define('_ACCESS', 0);
+?>
+
 <link rel="icon" type="image/png" href="../favicon.png"/>
 <link href="../index.css" type="text/css" rel="stylesheet"/>
 <link href="./style.css" type="text/css" rel="stylesheet"/>
@@ -73,7 +78,7 @@ else
 				}
 			}
 			
-			if(!$_SESSION['signed_in'])
+			if(!$_SESSION['role'])
 			{
 				echo '<tr><td colspan=2>You must be <a href="signin.php">signed in</a> to reply. You can also <a href="signup.php">sign up</a> for an account.';
 			}
