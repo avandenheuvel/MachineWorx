@@ -2,6 +2,7 @@
 
 #forumWrapper {
 	width: 100%;
+	padding-bottom:20px;
 	margin: 0 auto; 			/* center the page */
 }
 

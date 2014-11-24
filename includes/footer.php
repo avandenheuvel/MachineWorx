@@ -1,4 +1,4 @@
-</div>
+
 <script type="text/javascript" src="<?php echo _ROOT."includes/footer.js"; ?>"></script>
 <div id="footer">
 	Copyright &copy;2014 - Adam Vanden Huevel, Sean Waite, Austin Lemieux
@@ -13,5 +13,4 @@
 			$level=0;
 		}
 	?>
-</div>
 </div>

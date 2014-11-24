@@ -93,4 +93,5 @@ else
 }
 
 include 'footer.php';
+include '../includes/footer.php';
 ?>

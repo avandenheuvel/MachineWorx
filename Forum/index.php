@@ -102,4 +102,5 @@ define('_ACCESS', 0);
 				}
 			}
 		 
-		include 'footer.php';?>
+		include 'footer.php';
+		include '../includes/footer.php';?>
