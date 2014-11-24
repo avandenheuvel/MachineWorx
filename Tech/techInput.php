@@ -1,6 +1,14 @@
+
+
 <div id="tableHeader">
 	<div class="description">
-		Description
+		Description<?php
+
+	$componentID=$_POST['id'];
+	
+	echo($componentID);
+
+?>
 	</div>
 	<div class="condition">
 		Condition

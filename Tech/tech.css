@@ -1,0 +1,26 @@
+#adminOptCont {
+	border-radius: 5px;	
+	border: 2px solid #4DC3FF;
+	background-color: #333;
+}
+
+#adminOptCont div {
+	cursor: pointer;	
+}
+
+#adminOptCont div:hover {
+	background-color: #4DC3FF;
+	color: #333;
+}
+
+.lev1 {
+	padding: 3px 3px 3px 5px;
+}
+
+.lev2 {
+	padding: 3px 3px 3px 15px;
+}
+
+.lev3 {
+	padding: 3px 3px 3px 25px;
+}

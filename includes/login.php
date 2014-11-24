@@ -26,6 +26,7 @@
 		} else {
 			$pwd=$row['User_Password'];
 			if($pwd==$pass){
+				$_SESSION['id']=$row['UserID'];
 				$_SESSION['fname']=$row['User_FName'];
 				$_SESSION['lname']=$row['User_LName'];
 				$_SESSION['username']=$user;
