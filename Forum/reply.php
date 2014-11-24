@@ -20,7 +20,7 @@ else
 	//check for sign in status
 	if(!$_SESSION['role'])
 	{
-		echo 'You must be signed in to post a reply.';
+		echo 'You must be <a onclick="logBtnClick();">signed in</a> to post a reply.';
 	}
 	else
 	{

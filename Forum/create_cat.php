@@ -15,7 +15,7 @@ include 'header.php';
 
 echo '<h2>Create a category</h2>';
 if(!isset($_SESSION['role'])){
-	echo 'Sorry, you have to be <a href="login.php">signed in</a> to create a cateory.';
+	echo 'Sorry, you have to be <a onclick="logBtnClick();">signed in</a> to create a cateory.';
 }else{	
 	if($_SESSION['role'] != 1 )
 	{
@@ -54,5 +54,4 @@ if(!isset($_SESSION['role'])){
 	}
 }	
 
-include 'footer.php';
-?>
+include 'footer.php';?>

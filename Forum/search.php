@@ -1,6 +1,5 @@
 <!--Add the search bar to the page-->
-<div id="searchbar"> 
-	<form class="item" name="search" method="post" action="<?=$_SERVER['PHP_SELF']?>">
+	<form id="searchbar" name="search" method="post" action="<?=$_SERVER['PHP_SELF']?>">
 		Seach for: <input type="text" name="find" /> in 
 		<Select NAME="field">
 			<Option VALUE="topic_cat">Category</option>
@@ -10,7 +9,7 @@
 		<input type="hidden" name="searching" value="yes" />
 		<input type="submit" name="search" value="Search" />
 	</form>
-</div>
+
 
  <?php
  //This is only displayed if they have submitted the form 

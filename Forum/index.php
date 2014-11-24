@@ -12,7 +12,6 @@ define('_ACCESS', 0);
 		
 	</head>
 	
-	<body>
 		
 		<?php
 			//create_cat.php
@@ -102,9 +101,5 @@ define('_ACCESS', 0);
 					}
 				}
 			}
-		?>
-
-		<?php 
-		include('footer.php');
-		include_once("../includes/footer.php");?>
-	</body>
+		 
+		include 'footer.php';?>

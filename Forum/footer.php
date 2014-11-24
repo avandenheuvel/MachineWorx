@@ -1,6 +1,8 @@
-	</div><!-- content -->
-</div><!-- wrapper -->
+<!--End Content-->
+</div>
 
-</body>
+<!--End wrapper-->
+</div>
 
-</html>
+
+

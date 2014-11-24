@@ -40,14 +40,7 @@
 	width: 250px;
 }
 
-#searchbar {
-	position:relative;
-	float:right;
-	color: #fff;
-	padding: 10px;
-	margin: 20px;
-	text-align: right;
-}
+
 
 #footer {
 	clear: both;
@@ -94,6 +87,16 @@ h3 {
 
 /* Menu styles */
 .item {
+	background-color: #00728B;
+	border: 1px solid #032472;
+	color: #FFF;
+	font-family: Arial;
+	padding: 3px;
+	text-decoration: none;
+}
+
+#searchbar {
+	float:right;
 	background-color: #00728B;
 	border: 1px solid #032472;
 	color: #FFF;

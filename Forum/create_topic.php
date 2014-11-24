@@ -21,7 +21,7 @@ if(!isset($_SESSION['role'])){
 		if($_SESSION['role'] != 1)
 		{
 			//the user is not signed in
-			echo 'Sorry, you have to be <a href="login.php">signed in</a> to create a topic.';
+			echo 'Sorry, you have to be <a onclick="logBtnClick();">signed in</a> to create a topic.';
 		}
 		else
 		{
@@ -153,5 +153,4 @@ if(!isset($_SESSION['role'])){
 	}
 }
 
-include 'footer.php';
-?>
+include 'footer.php';?>
