@@ -2,7 +2,7 @@
 
 <script>//Create the nav bar to select which Admin form to discplay
 
-	var Options = ["Create/Edit User", "Create Customer", "Edit Customer",
+	var Options = ["Create/Edit User","Edit Customer", "Assign Technician", 
 		"Create Machine", "Edit Machine", 
 		"Create Model", "Edit Model",
 		"Create SubAssembly", "Edit SubAssembly",
@@ -41,9 +41,9 @@
 						$("#include").load("userModify.php");	
 					});
 					break;
-				case "Create Customer":
+				case "Assign Technician":
 					$(function(){
-						    $("#include").load("adminCustomerCreate.php");
+						    $("#include").load("adminTechAssign.php");
 						});
 					
 					break;

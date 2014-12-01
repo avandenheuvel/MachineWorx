@@ -9,12 +9,17 @@
 #content {
 	background-color: #444;
 	border: 1px solid #000;
-	float: left;
 	font-family: Arial;
 	padding: 20px 30px;
 	margin:50px 0px 50px 0px;
 	text-align: left;
 	width: 100%;				/* fill up the entire div */
+}
+
+.clearfloat {
+	clear: both;
+	line-height: 1px;
+	font-size: 1px;
 }
 
 #menu {
@@ -92,12 +97,14 @@ h3 {
 	border: 1px solid #032472;
 	color: #FFF;
 	font-family: Arial;
-	padding: 3px;
+	padding: 6px;
 	text-decoration: none;
 }
 
 #searchbar {
 	float:right;
+	position:relative;
+	bottom:5px;
 	background-color: #00728B;
 	border: 1px solid #032472;
 	color: #FFF;

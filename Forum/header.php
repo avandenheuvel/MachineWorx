@@ -1,7 +1,4 @@
-﻿
-
-
-	<div id="forumWrapper">
+﻿<div id="forumWrapper">
 		<h1>Technical forum</h1>
 		<div id="menu">
 			<a class="item" href="index.php">Home</a> -
@@ -10,10 +7,7 @@
 				
 				<?php
 					include 'search.php';
-				?>
-			</div>
+				?><br class="clearfloat"/>
+		</div><!--End Menu-->
 	
 		<div id="content">
-	
-	
-

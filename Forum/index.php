@@ -2,10 +2,11 @@
 define('_ROOT', "../"); 
 define('_ACCESS', 0);
 ?>
-
+<!DOCTYPE html>
+<html>
 	<head>
 		<title>machineWorx</title>
-		
+		<meta charset="UTF-8">
         <link rel="icon" type="image/png" href="../favicon.png"/>
 		<link href="../index.css" type="text/css" rel="stylesheet"/>
 		<link href="./style.css" type="text/css" rel="stylesheet"/>

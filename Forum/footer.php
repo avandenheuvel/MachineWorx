@@ -1,8 +1,9 @@
-<!--End Content-->
-</div>
+</table><!--End of table-->
 
-<!--End wrapper-->
-</div>
+</div><!--End Content-->
+
+
+</div><!--End wrapper-->
 
 
 

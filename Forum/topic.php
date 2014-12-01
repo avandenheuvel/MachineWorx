@@ -49,14 +49,14 @@ else
 						posts.post_content,
 						posts.post_date,
 						posts.post_by,
-						users.user_id,
-						users.user_name
+						tblusers.UserID,
+						tblusers.User_Username
 					FROM
 						posts
 					LEFT JOIN
-						users
+						tblusers
 					ON
-						posts.post_by = users.user_id
+						posts.post_by = tblusers.UserID
 					WHERE
 						posts.post_topic = " . mysql_real_escape_string($_GET['id']);
 						
@@ -72,7 +72,7 @@ else
 				while($posts_row = mysql_fetch_assoc($posts_result))
 				{
 					echo '<tr class="topic-post">
-							<td class="user-post">' . $posts_row['user_name'] . '<br/>' . date('d-m-Y H:i', strtotime($posts_row['post_date'])) . '</td>
+							<td class="user-post">' . $posts_row['User_Username'] . '<br/>' . date('d-m-Y H:i', strtotime($posts_row['post_date'])) . '</td>
 							<td class="post-content">' . htmlentities(stripslashes($posts_row['post_content'])) . '</td>
 						  </tr>';
 				}
