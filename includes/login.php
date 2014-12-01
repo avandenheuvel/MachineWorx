@@ -31,6 +31,7 @@
 				$_SESSION['lname']=$row['User_LName'];
 				$_SESSION['username']=$user;
 				$_SESSION['role']=$row['User_Role'];
+				$_SESSION['userID']=$row['UserID'];
 				echo $row['User_Role'];
 			}else{
 				echo "0";	

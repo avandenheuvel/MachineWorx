@@ -65,7 +65,7 @@
 			$Check = $SQL->fetch();//fetch the next row*/
 		}
 		
-		//echo json_encode($arr); Used for troubleshooting of JSON data
+		//echo json_encode($arr); //Used for troubleshooting of JSON data
 		
 		$SQL->closeCursor(); //disconnect from the server
 		$db = null; // Clear memory
