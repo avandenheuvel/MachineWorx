@@ -54,22 +54,24 @@ function updateTree(id, depth, pId){
 }
 
 function handleDisplay(info, pId){
-	var linkArray=info.split("[|]");
-	for(var i=0; i<linkArray.length; i++){
-		var dataArray=linkArray[i].split("||");
-		var treeLink=document.createElement('div');
-		treeLink.id=pId+"-"+i;
-		treeLink.dbId=dataArray[0];
-		treeLink.onclick=function(){
-			checkStatus(this.dbId, dataArray[1], this.id);
-		}
-		treeLink.innerHTML=dataArray[2];
-		treeLink.classList.add("lev"+dataArray[1]);
-		treeLink.classList.add(pId);
-		if(dataArray[1]==1){
-			document.getElementById('adminOptCont').appendChild(treeLink);
-		}else{
-			document.getElementById('adminOptCont').insertBefore(treeLink, document.getElementById(pId).nextSibling);
+	if(info!=""){
+		var linkArray=info.split("[|]");
+		for(var i=0; i<linkArray.length; i++){
+			var dataArray=linkArray[i].split("||");
+			var treeLink=document.createElement('div');
+			treeLink.id=pId+"-"+i;
+			treeLink.dbId=dataArray[0];
+			treeLink.onclick=function(){
+				checkStatus(this.dbId, dataArray[1], this.id);
+			}
+			treeLink.innerHTML=dataArray[2];
+			treeLink.classList.add("lev"+dataArray[1]);
+			treeLink.classList.add(pId);
+			if(dataArray[1]==1){
+				document.getElementById('adminOptCont').appendChild(treeLink);
+			}else{
+				document.getElementById('adminOptCont').insertBefore(treeLink, document.getElementById(pId).nextSibling);
+			}
 		}
 	}
 }
