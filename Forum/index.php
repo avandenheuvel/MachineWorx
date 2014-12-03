@@ -18,7 +18,7 @@ define('_ACCESS', 0);
 			//create_cat.php
 			include_once("../includes/header.php");
 			include 'connect.php';
-			include 'header.php';
+			include_once 'header.php';
 			
 			$sql = "SELECT
 						categories.cat_id,

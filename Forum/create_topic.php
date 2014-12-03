@@ -7,6 +7,8 @@ define('_ACCESS', 0);
 <link href="../index.css" type="text/css" rel="stylesheet"/>
 <link href="./style.css" type="text/css" rel="stylesheet"/>
 
+
+
 <?php
 //create_topic.php
 include_once("../includes/header.php");
@@ -153,5 +155,11 @@ if(!isset($_SESSION['role'])){
 	}
 }
 
+
+
 include 'footer.php';
 include '../includes/footer.php';?>
+
+<script>
+	document.getElementById("searchbar").style.display='none';
+</script>
