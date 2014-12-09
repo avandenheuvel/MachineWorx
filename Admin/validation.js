@@ -33,8 +33,8 @@ function testInput(str, inID) {
 			}
 		break;
 		
-		//Check that detailed description has between 10 and 140 characters
-		case (inID == "checkDescDetail") || (inID=="subAssyName") :
+		//Check that detailed description has between 10 and 4000 characters
+		case (inID == "checkDescDetail") || (inID=="subAssyName") ||(InID=="ModelName"):
 			if(/^.{10,4000}$/.test(str) == true){
 				result = "";
 			}else{
@@ -42,12 +42,12 @@ function testInput(str, inID) {
 			}		        
 		break;
 		
-		//Check that simple description has between 10 and 40 characters
-		case (inID == "checkDescSimple") || (inID=="subAssyName"):
-			if(/^.{10,40}$/.test(str) == true){
+		//Check that simple description has between 2 and 40 characters
+		case (inID == "checkDescSimple") || (inID=="subAssyName")||(InID=="ModelName"):
+			if(/^.{2,40}$/.test(str) == true){
 				result = "";
 			}else{
-				result = "Description must be between 10 and 40 characters";
+				result = "Simple Description must be between 2 and 40 characters";
 			}		        
 		break;
 		

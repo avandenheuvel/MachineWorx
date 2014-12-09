@@ -25,12 +25,12 @@
 		while($Check != null){
 			
 			//Gets the current row value from the appropriate column
-			//$CheckID = $Check['CheckID'];
+			$CheckID = $Check['CheckID'];
 			$CheckName = $Check['Check_Name'];
 			$CheckDesc = $Check['Check_Desc'];
-			$CheckType=$Check['Check_Type'];
+			$CheckType= $Check['Check_Type'];
 			
-			$arr[] = array('Check_Name' => $CheckName, 'Check_Desc' => $CheckDesc, 'Check_Type' => $CheckType);
+			$arr[] = array('CheckID' => $CheckID, 'Check_Name' => $CheckName, 'Check_Desc' => $CheckDesc, 'Check_Type' => $CheckType);
 			
 			$Check = $SQL->fetch();//fetch the next row*/
 		}
@@ -88,9 +88,9 @@
 </script>
 
 
-
+<!--	<form name="adminSubAssyCreate" onsubmit="return selectAll()" Method="get" action=""> -->
 	<form name="adminSubAssyCreate" onsubmit="return selectAll()" Method="post" action="adminSubAssyCreateRESPONSE.php">
-		<div id="editContainer">
+	<div id="editContainer">
 		<h2>Create Sub-Assembly</h2>
 		<p>Set up sub assembly by picking items from the available items section and moving them
 			to the selected items area. If the check you require is not available it can be made on the
@@ -117,6 +117,7 @@
 							link.className = "";
 							link.textContent = checkNamesArray[i].Check_Name;
 							link.href = '#';
+							link.value = checkNamesArray[i].CheckID; 
 							document.getElementById('select1').appendChild(link);
 						}
 					</script>
@@ -130,7 +131,7 @@
 			
 			<div id="column2right">
 				<h3>Selected Items:</h3>
-				<select multiple size=12 id="select2" name="select2[]" class="selectLarge"></select>
+				<select multiple size=12 id="select2" name="checkID[]" class="selectLarge"></select>
 				<input type=button class="button" id="move up" name="moveUp" value="Move Up" />
 				<input type=button class="button" id="move down"  name="moveDown" value="Move Down" />
 			</div>
