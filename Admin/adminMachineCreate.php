@@ -1,93 +1,90 @@
-<script>
-	//Simple array for now. Will require a PHP db query
-	var Options = ["Check 1", "Check 2", "Check 3",
-	"Check 4", "Check 5", "Check 6", "Check 7","Check 8","Check 9",
-	"Check 10","Check 11", "Check 12","Check13", "Check...."];
-</script>
 
-<script>
-	//move selected date from the left select box to the right
-	function copyData(){
-	$().ready(function() {  
-		$('#add').click(function() {  
-			return !$('#select1 option:selected').remove().appendTo('#select2');  
-		});  
-		$('#remove').click(function() {  
-			return !$('#select2 option:selected').remove().appendTo('#select1');  
-		});  
-		});
-	}
-	
-	//JQuery function to change order of items in select box.
-	$(document).ready(function(){
-	    $('input[type="button"]').click(function(){
-	        var $op = $('#select2 option:selected'),
-	            $this = $(this);
-	        if($op.length){
-	            ($this.val() == 'Move Up') ? 
-	                $op.first().prev().before($op) : 
-	                $op.last().next().after($op);
-	        }
-	    });
-	});
-	
-	function clearSelected(){
-		$('#select2')
-	    .find('option')
-	    .remove()
-	    .end()
-	    //.append('<option value="whatever">text</option>')
-	    //.val('whatever');
-	}
-	
-</script>
 
-	<form name="adminSubAssyCreate" Method="post" action="">
-		<div id="editContainer">
-		<h2>Create Sub-Assembly</h2>
-		<p>Set up sub assembly by picking items from the available items section and moving them
-			to the selected items area. If the check you require is not available it can be made on the
-			<a href class="link"onclick='setUpAdmin("Create Item"); return false;'>Create Items</a> page.</p><!--Calls function in adminOptions.php-->
+<?php
+	/**
+	 * Connect to the databese and retrieve available items/checks
+	 * Creates an array $arr[] used to store retrieved db values 
+	 * encoded in <script> used to generate web page
+	 */
+
+	$dsn = 'mysql:host=itsql.fvtc.edu;dbname=machineworx158';
+	$username = 'MachineWorx158';
+	$ServerPassword='MachineWorx158';
+	
+	$options=array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION);
+	
+	try{
+		$db = new PDO($dsn,$username,$ServerPassword,$options);
 			
-			<div id="column1">
-			<h3>Available items</h3>	
-				<select multiple size=12 id="select1" class="selectLarge">
-					<script>//Define options for building list of available checks to edit
-					
-					for(var i = 0; i<Options.length; i++ ){
-						var link = document.createElement('option');
-						link.className = "";
-						link.textContent = Options[i];
-						link.href = '#';
-						//link.style.width="100%";
-						//link.style.margin="1px";
-						//link.onclick = function(){setUpAdmin(this)};
-						document.getElementById('select1').appendChild(link);
-					}
-					</script>
-				</select>
-			</div>
+		
+		$SQL = $db->prepare("Select * from tblmodels");
+		$SQL->execute();//execute the SQL query
+		$Model = $SQL->fetch();//Gets the first row of the table
+		
+		//loop through all tuples in relation	
+		while($Model != null){
+			
+			//Gets the current row value from the appropriate column
+			$modelID = $Model['Model_ID'];
+			$modelName = $Model['Model_Name'];
+			$modelDesc=$Model['Model_Desc'];
+			
+			$arr[] = array('Model_ID' => $modelID, 'Model_Name' => $modelName, 'Model_Desc' => $modelDesc);
+			
+			$Model = $SQL->fetch();//fetch the next row*/
+		}
+		
+		//echo json_encode($arr); //Used for troubleshooting of JSON data
+		
+		$SQL->closeCursor(); //disconnect from the server
+		$db = null; // Clear memory
+	
+	}catch(PDOException $e){
+		$error_message = $e->getMessage();		
+		echo("<p>Database error: $error_message</p>");
+	}
+?>
+
+
+<form name="editItem" action="adminMachineCreateRESPONSE.php" method="post">
+	<div id="editContainer">
+		<h2>Create Machine</h2>
+		<p>Create Machines by assigning a serial number to the appropriate model. If the model you require doesn't exist you can make one on the 
+			<a href class="link"onclick='setUpAdmin("Create Model"); return false;'>Create Model</a> page.</p><!--Calls function in adminOptions.php-->
+		
+		<label for="txtInput"><h4><strong>Enter Machine Make</strong></h4></label>
+		<textarea id="machineMake" name="machineMake" rows="1" cols="50" maxlength="40" class="txtInput"
+			onblur="validate('checkDescSimple','checkDescSimpleErr')"
+			onfocus="resetError('checkDescSimpleErr')"></textarea>	
+		<div id="checkDescSimpleErr" class="error" ></div>
+		
+		
+		<h4>Select Model</h4><select class="dropdown" id="available" name="available" onchange="populateDesc(this);">
+			<option>Choose check to edit...</option>
+			<script>
+				//Define options for building list of available checks to edit
 				
-			<div id="column2mid">	
-				<input type=button class="button" id="add"onclick="copyData()" name="Add" value="Add -->" />
-				<input type=button class="button" id="remove" onclick="copyData()" name="Remove" value="<--Remove" />
-			</div>
-			
-			<div id="column2right">
-				<h3>Selected Items:</h3>
-				<select size=12 id="select2" class="selectLarge"></select>
-				<input type=button class="button" id="move up" name="moveUp" value="Move Up" />
-				<input type=button class="button" id="move down"  name="moveDown" value="Move Down" />
-			</div>
-		</div><!--End Edit Container-->
-			
-		<div class="formButton">
-			<input type="submit"  id="btnSubmit" name="Submit" value="Submit" />
-			<input type="reset"  id="btnReset"  onclick="setUpAdmin('Create SubAssembly')" name="Cancel" value="Cancel" />
-		</div>
+				var tuppleArray=<?=json_encode($arr)?>;
+				
+				/*
+				 * Build the list of available items
+				 */
+				for(var i = 0; i<tuppleArray.length; i++ ){
+					var link = document.createElement('option');
+					link.className = "";
+					link.textContent = tuppleArray[i].Model_Name;
+					link.href = '#';
+					document.getElementById('available').appendChild(link);
+				}
+			</script>
+		</select>
 		
-	</form>
-		
-		
+	</br>
 	
+	</div><!--End editContainer-->	
 	
+	<div class="formButton">
+	    <input type=submit id="btnSubmit" name="submitItemEdit" action="adminMachineCreateRESPONSE.php" method="post" value="Submit" />
+	    <input type=reset	 id="btnReset" name="cancelItemEdit" value="Cancel"/>
+    </div>
+</form>
