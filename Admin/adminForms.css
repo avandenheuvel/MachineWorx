@@ -50,14 +50,14 @@ a.adminOptions:hover{
 #adminDataArea{
 	position: relative;
 	display:inline-block;
-	background-color: #DDD;
+	background-color: #ecf0f1;
 	color: #444;
 	width: 78%;
 	margin-left:2%;
-	min-height:350px;
+	min-height:370px;
 	min-width: 400px;
 	border: solid 2px #4DC3FF;
-	overflow-y: auto;
+	/*overflow-y: auto;*/
 	overflow-x: hidden;
 	padding: 10px;
 	border-radius: 5px;
@@ -72,7 +72,7 @@ a.adminOptions:hover{
 
 #adminContainer, #adminDataArea{
 	top:15%;
-	height:80%;
+	height:90%;
 }
 
 #column1{
@@ -83,6 +83,11 @@ a.adminOptions:hover{
 	float: left;
 	height: 100%;
 }
+
+	#column1 h3, #column2right h3 {
+		-webkit-margin-before: .5em;
+		-webkit-margin-after: .5em;
+	}
 
 #column2mid{
 	position: relative;
@@ -105,7 +110,12 @@ a.adminOptions:hover{
 	width:80%;
 	margin-right: 10%;
 	margin-left: 10%;
+	margin-top: 2%;
 }
+
+	#editContainer .button:hover {
+		background-color: #4DC3FF;
+	}
 
 #editContainer .radio{
 	display: inline;
@@ -118,9 +128,9 @@ a.adminOptions:hover{
 }
 
 .formButton{
+	float: right;
 	display: block;
-	width:100%;
-	margin-left: 2%;
+	margin: 1% 2% 0 0;
 }
 
 .formButton input{
@@ -128,8 +138,6 @@ a.adminOptions:hover{
 	width: 10%;
 	padding: 10px 10px;
 	min-width:70px;
-	margin-bottom: 10px;
-	margin-top: 10px;
 }
 
 /*.formButton #btnSubmit:hover{
@@ -145,8 +153,10 @@ a.adminOptions:hover{
 .dropdown{
 	display:inline-block;
 	width: 100%;
-	height:50px;	
+	height: 30px;	
 }
+
+
 
 .txtInput{
 	display:inline-block;
@@ -171,7 +181,7 @@ a.adminOptions:hover{
 .selectLarge {
 	width:100%;
 	height:100%;
-	min-height: 100px;
+	min-height: 80px;
 }
 
 select:hover {
@@ -194,16 +204,17 @@ select:hover {
 	height: 30px;
 	position: absolute;
 	background-color: #DDD;
-	border: 2px solid #444;
+	border: 1px solid #444;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
+	border-bottom: none;
 	color: #444;
-	font-size: 24px;
-	font-weight: bold;
+	padding-top: 4px;
+	font-size: 20px;
 	cursor: pointer;
 }
 
-#createTab {	
+#createTab {
 	background-color: #4DC3FF;
 }
 
@@ -211,17 +222,19 @@ select:hover {
 	margin-left: 100px;	
 }
 
-#createUser {
+#createUser, #editUser {
 	display: block;
 	padding: 10px;
-	background-color: #DDD;
-	border: 2px solid #444;
+	border-top-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border: 1px solid #444;
 	left: 10px;
 	right: 10px;
 	top: 40px;
 	bottom: 10px;
 	position: absolute;
-	overflow-y: auto;
+	/*overflow-y: auto;*/
 }
 
 #profPic {
@@ -234,32 +247,24 @@ input[type=file]{
 	top: 250px;
 }
 
-#submit {
+/*#submit {
 	position: absolute;
 	bottom: 0px;
 	width: 70px;
 	right: 90px;
 	padding: 10px;
-}
+}*/
 
-#reset {
+/*#reset {
 	position: absolute;
 	bottom: 0px;
 	width: 70px;
 	right: 10px;
 	padding: 10px;
-}
+}*/
 
 #editUser {
 	display: none;	
-	background-color: #DDD;
-	border: 2px solid #444;
-	left: 10px;
-	right: 10px;
-	top: 40px;
-	bottom: 10px;
-	position: absolute;
-	overflow-y: auto;
 }
 
 #searchPage {
@@ -325,14 +330,6 @@ input[type=file]{
 	left: 0%;	
 }
 
-#createUser input{
-	margin-bottom: 5px;
-}
-
-#createUser input[type=text], #createUser input[type=password] {
-	display: block;	
-	width: 170px;
-}
 
 #searchPage label, #searchPage input {
 	display: inline;
@@ -346,7 +343,7 @@ input[type=file]{
 table, tr, td, th {
 	border: none;	
 	border-collapse: collapse;
-	margin: 0;
+	margin: 15px 0 0 0;
 	padding: 2px;
 }
 

@@ -41,28 +41,37 @@ define('_ACCESS', 0);
 					echo "onclick=\"alert('You must be logged in to manage equipment.');\"";
 				} 
 			?>>
-            <div id="left">
-            <div class="textUnderlay">
-            	<h1>Equipment</h1>
-                Manage your equipment assets. Print reports, view service history, and track data points.
+                <div id="left">
+                    <div class="pic-float-left">
+                        <img src="./images/checklist.png">
+                    </div>
+                    <div class="textUnderlay">
+                        <h1>Equipment</h1>
+                        Manage your equipment assets. Print reports, view service history, and track data points.
+                    </div>
                 </div>
-            </div>
             </a>
             <a href="./Forum">
-            <div id="mid">
-            <div class="textUnderlay">
-            	<h1>Forum</h1>
-                Post your questions to the Technician Forum.
-            </div>
-            </div>
+                <div id="mid">
+                	<div class="pic-float-left">
+                    	<img src="./images/reports.png">
+                    </div>                
+                    <div class="textUnderlay">
+                        <h1>Forum</h1>
+                        Post your questions to the Technician Forum.
+                    </div>
+                </div>
             </a>
-            <a href="./Wiki">
-            <div id="right">
-            <div class="textUnderlay">
-            	<h1>Wiki</h1>
-                Information about machine checks, calibration procedures, recommended repairs, tools needed, etc.
-            </div>
-            </div>
+            <a href="#">
+                <div id="right">
+    				<div class="pic-float-left">
+                    	<img src="./images/Wikipedia-logo.png">
+                    </div>
+                    <div class="textUnderlay">
+                        <h1>Wiki</h1>
+                        Information about machine checks, calibration procedures, recommended repairs, tools needed, etc.
+                    </div>
+                </div>
             </a>
         <?php include_once("./includes/footer.php");?>
 	</body>
