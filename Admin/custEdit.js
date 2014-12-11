@@ -1,5 +1,6 @@
 var oldIds=new Array();
-var newIds=new Array();
+var removedIds=new Array();
+var addedIds=new Array();
 
 function searchCust(){
 	document.getElementById('searchPage').style.display="block";
@@ -70,4 +71,8 @@ function setEdit(data){
 			document.getElementById("select2").appendChild(option);	
 		}
 	}
+}
+
+function updateCustomer(){
+		
 }

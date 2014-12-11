@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="header.php" server="itweb.fvtc.edu" local="130578092135105000" remote="130578092400000000" Dst="2" />
-<file name="login.js" server="itweb.fvtc.edu" local="130578001991125000" remote="130578002400000000" Dst="2" />
-<file name="login.php" server="itweb.fvtc.edu" local="130577993692145000" remote="130577993400000000" Dst="2" />
-<file name="logout.php" server="itweb.fvtc.edu" local="130578021327405000" remote="130578021000000000" Dst="2" />
+<file name="header.php" server="itweb.fvtc.edu" local="130591084612154000" remote="130591084800000000" Dst="2" />
+<file name="login.js" server="itweb.fvtc.edu" local="130591046481024000" remote="130591046400000000" Dst="2" />
+<file name="login.php" server="itweb.fvtc.edu" local="130610911256680000" remote="130610911200000000" Dst="1" />
+<file name="logout.php" server="itweb.fvtc.edu" local="130578021327405000" remote="130578250200000000" Dst="2" />
+<file name="adminItemCreate.php" server="itweb.fvtc.edu" local="130576543898938500" remote="130578250200000000" Dst="2" />
+<file name="adminOptions.php" server="itweb.fvtc.edu" local="130576543898948500" remote="130578250200000000" Dst="2" />
+<file name="footer.php" server="itweb.fvtc.edu" local="130578492807157000" remote="130578581400000000" Dst="2" />
+<file name="dbconnect.php" server="itweb.fvtc.edu" local="130577792765865000" remote="130578250200000000" Dst="2" />
+<file name="footer.js" server="itweb.fvtc.edu" local="130578492930000000" remote="130578581400000000" Dst="2" />
+<file name="createUser.js" server="itweb.fvtc.edu" local="130596616726439500" remote="130596616200000000" Dst="1" />
+<file name="createUser.php" server="itweb.fvtc.edu" local="130591000147794000" remote="130591000800000000" Dst="2" />
+<file name="md5.js" server="itweb.fvtc.edu" local="130585012141266000" remote="130591001400000000" Dst="2" />
+<file name="redirect.js" server="itweb.fvtc.edu" local="130591092394334000" remote="130591092000000000" Dst="2" />
+<file name="searchUsers.php" server="itweb.fvtc.edu" local="130595692646499500" remote="130595694600000000" Dst="1" />
+<file name="getUser.php" server="itweb.fvtc.edu" local="130595746263249500" remote="130595746200000000" Dst="1" />
+<file name="deleteUser.php" server="itweb.fvtc.edu" local="130595752924869500" remote="130595752800000000" Dst="1" />
+<file name="editUser.php" server="itweb.fvtc.edu" local="130596499825219500" remote="130596499800000000" Dst="1" />
 </dwsync>

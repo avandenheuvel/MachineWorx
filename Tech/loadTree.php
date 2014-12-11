@@ -29,7 +29,7 @@
 				$queryString = "SELECT c.Join_MachineID, m.Machine_Make, m.Machine_Model FROM tbljoin_customer_machines c, tblmachines m WHERE c.Join_CustomerID = :id AND c.Join_MachineID = m.MachineID";
 				break;
 			case 2:
-				$queryString = "SELECT m.Join_ComponentID, c.Component_Name FROM tbljoin_machine_component m, tblcomponents c WHERE m.Join_MachineID = :id AND m.Join_ComponentID = c.ComponentID";
+				$queryString = "SELECT m.Join_ComponentID, c.Component_Name FROM tbljoin_model_component m, tblcomponents c, tbljoin_machine_model i WHERE i.Join_MachineID = :id AND i.Join_Model_ID = m.Join_Model_ID AND m.Join_ComponentID = c.ComponentID";
 				break;
 			default:
 				die("Invalid Depth");

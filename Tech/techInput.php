@@ -1,14 +1,7 @@
-
-
 <div id="tableHeader">
 	<div class="description">
-		Description<?php
-
-	$componentID=$_POST['id'];
-	
-	echo($componentID);
-
-?>
+		Description
+		
 	</div>
 	<div class="condition">
 		Condition
@@ -20,164 +13,59 @@
 </div>
 
 <div class="subAssyCont">
-	<div class="itemCheckCont">
-		<div class="description">description will go here..</div>
-		
-		<div class="condition">
-			<select><!--Pull these options from the DB-->
-				<option>Good condition</option>
-				<option>Needs fixin</option>
-				<option>Repaired</option>	
-			</select>
-			<a class="lastChecked">Date Of last check = 6/9</a>
-		</div>
-		
-		<div class="comments">
-			<textarea class="txtInput"></textarea>
-		</div>
-		
-		<div class="picture">	
-			<input type=button value="insert pic" />
-		</div>
-	</div><!--End item check-->
+	<?php
 	
-	<div class="itemCheckCont">
-		<div class="description">description will go here..</div>
-		
-		<div class="condition">
-			<select><!--Pull these options from the DB-->
-				<option>Good condition</option>
-				<option>Needs fixin</option>
-				<option>Repaired</option>	
-			</select>
-		</div>
-		
-		<div class="comments">
-			<textarea class="txtInput"></textarea>
-		</div>
-		
-		<div class="picture">	
-			<input type=button value="insert pic" />
-		</div>
-	</div><!--End item check-->
+	$componentID=$_POST['compId'];
+	$customerID=$_POST['custId'];
+	$machineID=$_POST['machId'];
+	if($componentID==""){
+		die("No component specified");	
+	}
 	
-	<div class="itemCheckCont">
-		<div class="description">description will go here..</div>
+	$dsn = 'mysql:host=itsql.fvtc.edu;dbname=MachineWorx158';
+	$username = 'MachineWorx158';
+	$password = 'MachineWorx158';
+	$options = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
+
+	try {
 		
-		<div class="condition">
-			<select><!--Pull these options from the DB-->
-				<option>Good condition</option>
-				<option>Needs fixin</option>
-				<option>Repaired</option>	
-			</select>
-		</div>
+		$queryString = "SELECT c.Check_Name, c.Check_Desc, i.Join_Check_ID FROM tblchecks c, tbljoin_components_checks i WHERE i.Join_Component_ID = :id AND i.Join_Check_ID = c.CheckID";
+		$db = new PDO($dsn, $username, $password, $options);
+		$query = $db->prepare($queryString); 
+		$query -> bindParam(':id', $componentID);
+		$query->execute();
+
+		while($row = $query->fetch(PDO::FETCH_ASSOC)){
+			echo("<div class=\"itemCheckCont\">
+				<div class=\"description\"><b>".$row['Check_Name']."</b><br/>".$row['Check_Desc']."</div>
 		
-		<div class="comments">
-			<textarea class="txtInput"></textarea>
-		</div>
+				<div class=\"condition\">
+					<select>
+						<option value=\"\">Condition</option>
+						<option value=\"Good\">Good</option>
+						<option value=\"Ok\">Ok</option>
+						<option value=\"Poor\">Poor</option>
+						<option value=\"Repaired\">Repaired</option>	
+					</select>
+				</div>
 		
-		<div class="picture">	
-			<input type=button value="insert pic" />
-		</div>
-	</div><!--End item check-->
+				<div class=\"comments\">
+					<textarea class=\"txtInput\"></textarea>
+				</div>
+		
+				<div class=\"picture\">	
+					<input id=\"btn".$row['Join_Check_ID']."\" type=\"button\" value=\"Check\" onclick=\"updateCheck(".$customerID.",".$machineID.",".$componentID.",".$row['Join_Check_ID'].", this.id);\"/>
+				</div>
+			</div>");
+		}
+		
+		$query->closeCursor();
+		$db = null;
 	
-	<div class="itemCheckCont">
-		<div class="description">description will go here..</div>
-		
-		<div class="condition">
-			<select><!--Pull these options from the DB-->
-				<option>Good condition</option>
-				<option>Needs fixin</option>
-				<option>Repaired</option>	
-			</select>
-		</div>
-		
-		<div class="comments">
-			<textarea class="txtInput"></textarea>
-		</div>
-		
-		<div class="picture">	
-			<input type=button value="insert pic" />
-		</div>
-	</div><!--End item check-->
-	
-	<div class="itemCheckCont">
-		<div class="description">description will go here..</div>
-		
-		<div class="condition">
-			<select><!--Pull these options from the DB-->
-				<option>Good condition</option>
-				<option>Needs fixin</option>
-				<option>Repaired</option>	
-			</select>
-		</div>
-		
-		<div class="comments">
-			<textarea class="txtInput"></textarea>
-		</div>
-		
-		<div class="picture">	
-			<input type=button value="insert pic" />
-		</div>
-	</div><!--End item check-->
-	
-	<div class="itemCheckCont">
-		<div class="description">description will go here..</div>
-		
-		<div class="condition">
-			<select><!--Pull these options from the DB-->
-				<option>Good condition</option>
-				<option>Needs fixin</option>
-				<option>Repaired</option>	
-			</select>
-		</div>
-		
-		<div class="comments">
-			<textarea class="txtInput"></textarea>
-		</div>
-		
-		<div class="picture">	
-			<input type=button value="insert pic" />
-		</div>
-	</div><!--End item check-->
-	
-	<div class="itemCheckCont">
-		<div class="description">description will go here..</div>
-		
-		<div class="condition">
-			<select><!--Pull these options from the DB-->
-				<option>Good condition</option>
-				<option>Needs fixin</option>
-				<option>Repaired</option>	
-			</select>
-		</div>
-		
-		<div class="comments">
-			<textarea class="txtInput"></textarea>
-		</div>
-		
-		<div class="picture">	
-			<input type=button value="insert pic" />
-		</div>
-	</div><!--End item check-->
-	
-	<div class="itemCheckCont">
-		<div class="description">description will go here..</div>
-		
-		<div class="condition">
-			<select><!--Pull these options from the DB-->
-				<option>Good condition</option>
-				<option>Needs fixin</option>
-				<option>Repaired</option>	
-			</select>
-		</div>
-		
-		<div class="comments">
-			<textarea class="txtInput"></textarea>
-		</div>
-		
-		<div class="picture">	
-			<input type=button value="insert pic" />
-		</div>
-	</div><!--End item check-->
-</div><!--End SubAssyCont-->
+	} catch(PDOException $e) {
+		$error_message = $e->getMessage();
+		echo("Database error: $error_message");	
+	}
+
+	?>
+</div>
