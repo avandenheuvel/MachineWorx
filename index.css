@@ -20,7 +20,7 @@ html, body {
 
 body {
 	font-family: Arial, Helvetica, sans-serif;
-	background-color: #DDD;
+	background: url(images/background.png) top center repeat-y #444;
 	color: #DDD;
 }
 
@@ -58,14 +58,13 @@ h4 {
 #header {
 	width: 100%;
 	position: relative;
-	height: 80px;
+	height: 90px;
 	font-size: 44px;
 	top: 0px;
-	color: #DDD;
-	background-color: #444;
 	text-align: center;
 	padding: 18px;
-	border-bottom: 2px solid #4DC3FF;
+	border-bottom: #7f8c8d 2px solid;
+	background-color: #444;
 }
 
 #headText {
@@ -106,32 +105,34 @@ h4 {
 	width: 120px;
 	height: 40px;
 	top: 20px;
-	right: 10px;	
+	right: 20px;	
 	font-size: 24px;
-	color: #444;
-	background-color: #4DC3FF;
+	color: #fff;
+	border: #4DC3FF 1px solid;
 	font-weight: bold;
-	padding: 8px;
+	padding-top: 4px;
 	border-radius: 5px;
 	cursor: pointer;
 }
 
 #logBtn:hover {
-	background-color: #DDD;	
+	background-color: rgba(127, 140, 141,0.5);
 }
 
 #logBox {
 	display: none;
 	background-color: #444;
 	position: absolute;
-	top: 60px;
-	right: 10px;
+	top: 70px;
+	right: 20px;
 	width: 300px;
 	height: 120px;
 	color: #DDD;
 	font-size: 14px;
-	border: solid 2px #4DC3FF;
+	border: solid 1px #6C7A89;
+	border-radius: 5px;
 	z-index: 1000;
+	box-shadow: 3px 3px 8px #6C7A89;
 }
 
 #logBox input[type=submit]:hover {
@@ -246,11 +247,7 @@ h4 {
 #main {
 	position: relative;
 	width: 90%;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	left: 5%;
-	background-color: #444;
-	border: 2px solid #4DC3FF; 
+	margin: 0 auto;
 	color: #DDD;
 	padding: 20px;
 }
@@ -264,7 +261,7 @@ h4 {
 	left: 0px;
 	height: 30px;
 	background-color: #444;
-	border-top: solid 2px #4DC3FF;
+	border-top: #7f8c8d 2px solid;
 	color: #DDD;	
 	font-size: 16px;
 	padding: 7px;
@@ -291,6 +288,10 @@ a:hover {
 a:active {
 	color: #444;
 	text-decoration: none;
+}
+
+a img {
+	border: none;
 }
 
 /* Form Styles */

@@ -22,7 +22,11 @@
 					break;
 			}
 			echo "<div id=\"headText\">";
-			echo "Welcome, $fname $lname!<br/>You're logged in as: $role";
+			if (empty($lname)) {
+				echo "Welcome, $fname!<br/>You're logged in as: $role";
+			} else {
+				echo "Welcome, $fname $lname!<br/>You're logged in as: $role";	
+			}
 			echo "</div>";
 			echo "<a href=\""._ROOT."includes/logout.php\"><div id=\"logOutBtn\">Logout</div></a>";
 			if(_ACCESS!=0){
