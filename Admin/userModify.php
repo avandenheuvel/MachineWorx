@@ -5,7 +5,7 @@
 	<div id="statusDiv">Create New User:</div>
 	<!--<img src="../images/default.png" id="profPic" width="200" height="200"/>
     <input type="file" id="profImg" name="profImg" accept="image/jpeg, image/gif, image/png" onchange="changePhoto();"/>-->
-    <div style="position: relative; height: 210px;">
+    <div style="position: relative; height: 240px;">
     <fieldset style="left: 2%;">
 	<label for="fname" class="txtLabel">First Name: </label>
 	<input type="text"  id="fname" name="fname"/>
@@ -31,10 +31,15 @@
     </fieldset>
     </div>
     </div>
-    <div style="height: 40px; position: relative;">
+    <div class="formButton" style="margin-top: 0">
+        <input type=submit id="submit" value="Submit" />
+        <input type=reset id="reset" value="Reset"/>
+    </div>
+    <br class="clearFloat">
+<!--    <div style="height: 40px; position: relative;">
     <input id="submit" type="submit" value="Create"/>
     <input id="reset" type="reset" value="Reset"/>
-    </div>
+    </div>-->
 </form>
 </div>
 <div id="editTab" onclick="editPageSelect();">Edit</div>
