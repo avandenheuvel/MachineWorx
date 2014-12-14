@@ -173,6 +173,16 @@ h4 {
 	width: 50px;
 	height: 20px;
 	right: 30px;
+	color: #FFF;
+	border: 1px solid #4DC3FF;
+	cursor: pointer;
+	border-radius: 5px;
+	font-weight: bold;
+	background-color: transparent;
+}
+
+#logBox #submit:hover {
+	background-color: rgba(127,140,141,0.5);	
 }
 
 #logBox #uLabel, #pLabel {

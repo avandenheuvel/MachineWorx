@@ -1,30 +1,27 @@
 <style>
 	#tableHeader {
 		width: 100%;
-		position: absolute;
+		position: relative;
 		display:table;
 		top: 0px;
 		left: 0px;
-		height: 30px;
+		height: 5%;
 		background-color: #333;
 		border-top: solid 1px #CCC;
 		color: #CCC;	
 		font-size: 18px;
-		padding-left:2%;
+		padding: 5px;
 		text-align: left;
 	}
 	.subAssyCont{
-		position:absolute;
-		overflow:auto;
-		margin-top:30px;
+		position:relative;
+		overflow-y: auto;
 		width:100%;
-		height: 90%;
+		height: 95%;
 	}
 	.itemCheckCont{
 		width:100%;
-		padding-left:2%;
-		padding-bottom:10px;
-		padding-top:10px;
+		padding: 10px 0 10px 0;
 		border-bottom: 2px solid #000000;
 		display: table;
 	}
@@ -32,14 +29,14 @@
 		display:table-cell;
 		vertical-align:middle;
 		width:35%;
-		padding-right: 2%;
+		padding: 5px;
 		height:auto;
 	}
 	.condition{
 		display:table-cell;
 		vertical-align:middle;
 		width: 20%;
-		padding-right:2%;
+		padding: 5px;
 	}
 	.condition select{
 		width: 80%;
@@ -49,7 +46,7 @@
 		display:table-cell;
 		vertical-align:middle;
 		width: 35%;
-		padding-right:2%;
+		padding: 5px;
 	}
 	.picture{
 		display:table-cell;
