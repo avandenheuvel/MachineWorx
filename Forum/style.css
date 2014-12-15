@@ -225,7 +225,7 @@ textarea {
 	padding: 0;
 }
 
-#forum-navbar > li:hover, #forum-navbar > li:hover > a {
+#forum-navbar > li:hover, #forum-navbar > li:hover > a, #searchBtn:hover {
 	background-color: #6C7A89;
 	color: #ecf0f1; 
 }
