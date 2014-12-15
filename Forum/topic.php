@@ -107,3 +107,6 @@ else
 
 include 'footer.php';
 include '../includes/footer.php';?>
+<script>
+	document.getElementById("searchbar").style.display='none';
+</script>
