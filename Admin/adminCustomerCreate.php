@@ -87,7 +87,6 @@
 			<input type="submit"  id="btnSubmit" name="Submit" value="Submit" />
 			<input type="reset"  id="btnReset"  onclick="setUpAdmin('Create SubAssembly')" name="Cancel" value="Cancel" />
 		</div>
-		
 	</form>
 		
 		
