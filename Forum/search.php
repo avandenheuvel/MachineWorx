@@ -1,16 +1,14 @@
 <!--Add the search bar to the page-->
 	<form id="searchbar" name="search" method="post" action="<?=$_SERVER['PHP_SELF']?>">
-		Seach for: <input type="text" name="find" /> in 
-		<Select NAME="field">
-			<Option VALUE="topic_cat">Category</option>
-			<Option VALUE="topic_subject">Topic</option>
-			<Option VALUE="post_content">Content</Option>
-		</Select>
-		<input type="hidden" name="searching" value="yes" />
-		<input type="submit" id="searchBtn" name="search" value="Search" />
-	</form>
-	</div><!--End Menu-->
-
+        <input type="submit" id="searchBtn" name="search" value="Search">
+        <input type="text" name="find" placeholder="Search...">
+        <select name="field">
+            <option value="topic_subject">Topic</option>
+            <option value="topic_cat">Category</option>
+            <option value="post_content">Content</option>
+        </select>        
+        <input type="hidden" name="searching" value="yes">        
+    </form>
 
 <div class="searchResults">
 	 <?php
@@ -23,7 +21,7 @@
 	 if ($searching =="yes") 
 	 {
 	 	 
-	 	echo "<h2>Results</h2>"; 
+	 	echo "<h2>Results:</h2>"; 
 	 
 		 //If they did not enter a search term we give them an error 
 		 if ($find == "") 
@@ -33,7 +31,7 @@
 		 } 
 		 
 		 // Otherwise we connect to our Database 
-		 include 'connect.php'; 
+		 //include 'connect.php'; 
 		 
 		 // We preform a bit of filtering 
 		 $find = strtoupper($find); 
@@ -53,7 +51,7 @@
 		 //And we display the results 
 		 while($result = mysql_fetch_array($data)) 
 		 {
-			 echo '<a href="topic.php?id=' . $result['topic_id'] . '">' . $result['topic_subject'] . '</a> - ' ;
+			 echo '<a href="topic.php?id=' . $result['topic_id'] . '">' . $result['topic_subject'] . '</a> - Posted on - ' . $result['topic_date'];
 			 //Include first 50 characters of the description. 	
 			 echo'</br>';
 		 } 
@@ -66,7 +64,7 @@
 		 } 
 		 
 		 //And we remind them what they searched for 
-		 echo "<b>Searched For:</b> " .$find," in field ", $field; 
+		 echo "</br><b>Searched For:</b> " .$find," in field ", $field; 
 	 } 
 	 ?>
 	 <br class="clearfloat"/>

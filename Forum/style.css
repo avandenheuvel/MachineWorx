@@ -22,11 +22,11 @@
 	font-size: 1px;
 }
 
-#menu {
+/*#menu {
 	float: left;
 	border: 1px solid #000;
-	border-bottom: none;		/* avoid a double border */
-	clear: both;				/* clear:both makes sure the content div doesn't float next to this one but stays under it */
+	border-bottom: none;		/* avoid a double border 
+	clear: both;				 clear:both makes sure the content div doesn't float next to this one but stays under it 
 	width:100%;
 	height:20px;
 	padding: 0 30px;
@@ -34,10 +34,16 @@
 	background-color: #FFF;
 	text-align: left;
 	font-size: 85%;
-}
+}*/
+
 
 a:visited {
 	color: #FFFFFF;
+	
+}
+
+a:link{
+	text-decoration:underline;
 }
 
 a:hover {
@@ -50,8 +56,6 @@ a:hover {
 	float: right;
 	width: 250px;
 }
-
-
 
 #footer {
 	clear: both;
@@ -79,8 +83,10 @@ table a:hover {
 }
 
 th {
-	background-color: #B40E1F;
+	background-color:#00728B;
 	color: #F0F0F0;
+	font-size: large;
+	padding: 10px;
 }
 
 td {
@@ -109,7 +115,7 @@ h3 {
 }
 
 
-#searchbar {
+/*#searchbar {
 	float:right;
 	position:relative;
 	bottom:5px;
@@ -119,6 +125,40 @@ h3 {
 	font-family: Arial;
 	padding: 3px;
 	text-decoration: none;
+}*/
+
+.search {
+	position: absolute;
+	top: 0;
+	right: 5px;
+	width: 50%;
+	height: 100%;
+	margin: 0;
+	padding-top: .5em;
+	padding-left: 20%;
+}
+
+#searchbar > select, #searchbar > input {
+	border: none;
+	float: right;
+	height: 30px;
+	margin-right: 10px;
+	color: #7f8c8d;
+}
+
+#searchbar > select {
+	width: 100px;
+}
+
+#searchbar > input {
+	width: 200px;
+}
+
+#searchBtn {
+	width: 75px !important;
+	color: #fff !important;
+	background: #95a5a6;
+	border-radius: 4px;
 }
 
 .leftpart {
@@ -147,3 +187,51 @@ textarea {
 	width: 500px;
 	height: 200px;
 }
+
+#forum-menu {
+	position: relative;
+	width: 100%;
+	height: 3em;
+	border: 1px solid #00728b;
+	border-radius: 5px;
+	background: #ecf0f1;
+}
+
+#forum-navbar {
+	height: 100%;
+	list-style-type: none;
+	margin: 0;
+	padding-left: 5px;
+}
+
+#forum-navbar > li {
+	display: block;
+	float: left;
+	height: 100%;
+	padding: 1em 10px;	
+	border-right: 1px solid #bdc3c7;
+}
+	
+	#forum-navbar > li:last-child {
+		border: none;
+	}
+	
+#forum-navbar > li > a, #forum-navbar > li > a:visited {
+	display: block;
+	color: #7f8c8d;
+	text-decoration: none;
+	background: none;
+	margin: 0;
+	padding: 0;
+}
+
+#forum-navbar > li:hover, #forum-navbar > li:hover > a, #searchBtn:hover {
+	background-color: #6C7A89;
+	color: #ecf0f1; 
+}
+		
+		
+
+
+	
+
